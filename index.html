@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cozy Bean</title>
+</head>
+<body class="special-page">
+    <div class="layout">
+        <!-- Шапка -->
+        <header id="header">
+            <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+            <nav class="nav-bar">
+                <div class="nav-links">
+                    <a href="menu.html">Menu</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="specials.html">Specials</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="location.html">Location</a>
+                </div>
+             </nav>
+             <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" href="login.html" class="login"></a>
+             <img src="images/bag.png" alt="orderbag" class="orderbag">
+        </header>
+        <!-- Сайдбар -->
+        <aside id="section-sidebar">
+            <nav>
+                <a href="#main-content-start" class="active">Top</a><br>
+                <a href="#menu-section">Menu</a>
+                <a href="#specials-section">Special Offers</a>
+                <a href="#location-section">Location</a>
+                <a href="#about-section">About Us</a>
+                <a href="#contact-section">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- Контент -->
+        <main id="main">
+            <div id="main-content-start">
+                <img src="images/photo.jpg" alt="mainphoto" id="mainphoto">
+
+                <div id="search-form">
+                    <input list="establishments" id="search-input" name="establishment" placeholder="Choose an establishment...">
+                    <datalist id="establishments">
+                        <option value="Almaty Tole Bi st.">
+                        <option value="Astana Mangilik El st.">
+                        <option value="Atyrau Balgimbayeva st.">
+                        <option value="Taraz Abaya St.">
+                    </datalist>
+                </div>
+            </div>
+
+            <section class="Menu" id="menu-section">
+                <h1>Menu</h1>
+                <div class="cards-menu">
+                        <div class="card-menu">
+                        <img src="images/espresso.png" alt="Espresso">
+                        <h3>Espresso</h3>
+                        <p>Strong and rich classic shot of coffee</p>
+                        <span>$2.50</span>
+                    </div>
+                    <div class="card-menu">
+                        <img src="images/latte.png" alt="Latte">
+                        <h3>Latte</h3>
+                        <p>Espresso with steamed milk and creamy foam</p>
+                        <span>$3.50</span>
+                    </div>
+                    <div class="card-menu">
+                        <img src="images/cappucino.png" alt="Cappuccino">
+                        <h3>Cappuccino</h3>
+                        <p>Balanced mix of espresso, milk, and foam</p>
+                        <span>$3.00</span>
+                    </div>
+                    <div class="card-menu">
+                        <img src="images/croissant.png" alt="Croissant">
+                        <h3>Croissant</h3>
+                        <p>Freshly baked buttery croissant</p>
+                        <span>$2.20</span>
+                    </div>
+                    <div class="card-menu">
+                        <img src="images/cheesecake.png" alt="Cheesecake">
+                        <h3>Cheesecake</h3>
+                        <p>Classic New York cheesecake slice</p>
+                        <span>$4.00</span>
+                    </div>
+                </div>
+                <a href="menu.html"><button>Press to see more</button></a>
+            </section>
+
+            <section class="specials" id="specials-section">
+                <h1>Special Offers</h1>
+            
+                <div>
+                    <h3>Morning Latte</h3>
+                  <p>Start your day with our creamy latte. Only 900₸ until 12:00 PM!</p>
+                  <img src="images/latte.png" alt="Latte" width="200">
+                </div>
+
+                <div>
+                  <h3>Coffee + Muffin Combo</h3>
+                  <p>Perfect match: Cappuccino and Muffin for just 1500₸.</p>
+                  <img src="images/coffemuffin.jpg" alt="Muffin" width="200">
+                </div>
+
+                <div>
+                  <h3>Iced Coffee Deal</h3>
+                  <p>Stay cool with our refreshing iced coffee – Buy 1, Get 1 Free!</p>
+                  <img src="images/icecoffe.jpg" alt="Iced Coffee" width="200">
+                </div>
+
+                <div>
+                  <h3>Family Pack</h3>
+                  <p>Order 4 cappuccinos and get 2 croissants free.</p>
+                  <img src="images/familysale.png" alt="Family Pack" width="200">
+                </div>
+
+                <div class="special-card">
+                    <h3>Student Discount</h3>
+                    <p>Show your student card and get 20% off any drink.</p>
+                    <img src="images/studentsale.png" alt="Student Discount">
+                </div>
+            </section>
+
+            <section class="Location" id="location-section">
+                <h1>Location</h1>
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.123456789!2d71.430482!3d51.169411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTEuMTY5NDExLCA3McKwMjUnNDcuNyJlIQ!5e0!3m2!1sen!2skz!4v1690000000000!5m2!1sen!2skz" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+            </section>
+
+            <section class="About" id="about-section">
+                <h1>About us</h1>
+                <h3>Our Story</h3>
+                <p>Cozy Bean started as a small neighborhood spot in 2020. Our dream was simple: bring people together over great coffee and homemade pastries. 
+                <br>From day one, our mission has been to create a warm and welcoming atmosphere where everyone feels at home.</p>
+                <h3>Our Coffee</h3>
+                <p>Sustainably sourced beans roasted to perfection for the best flavor experience.</p>
+                <img src="images/coffee-beans.jpg" alt="coffee beans" class="coffee-beans">
+            </section>
+
+            <section class="Contact" id="contact-section">
+                <h1>Contact us</h1>
+                <form class="contact-form" action="#" method="post">
+                    <div class="input-group">
+                      <input id="name" class="text-input" type="text" name="name" required>
+                      <label for="name">Name</label>
+                    </div>
+                
+                    <div class="input-group">
+                      <input id="email" class="text-input" type="email" name="email" required>
+                      <label for="email">Email</label>
+                    </div>
+                
+                    <div class="input-group">
+                        <input id="message" class="text-input" type="text" required>
+                        <label for="message">Message</label>
+                    </div>
+                
+                  <div class="form-buttons">
+                    <button type="submit">Send</button>
+                    <button type="reset">Reset</button>
+                  </div>
+                </form>
+            </section>
+        </main>
+        <!-- Подвал -->
+        <footer>
+            SE-2407<br>
+            Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+        </footer>
+    </div>
+</body>
+</html>
