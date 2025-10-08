@@ -7,11 +7,9 @@
 body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-weight: 400;
-    margin: 0;
     line-height: 1.6;
     color: #222;
 }
-
 
 
 h1, h2, h3, h4 {
@@ -20,9 +18,7 @@ h1, h2, h3, h4 {
     letter-spacing: 0.5px;
 }
 
-
 nav {
-    top: 10px;
     position: relative;
     margin-left: auto;
     padding: 10px;
@@ -262,8 +258,8 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 .cards-coffee, .cards-desserts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
     padding: 20px;
@@ -272,6 +268,7 @@ input:focus, textarea:focus {
 }
 
 .card {
+    flex: 1 1 calc(30% - 20px);
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -463,23 +460,37 @@ main   {
   display: block;
 }
 
+.card-index{
+    border-radius: 10px;
+    width: 30%;
+}
+
+.card-index2 {
+    border-radius: 10px;
+    width: 50%;
+}
 @media (max-width: 575px) { /* Mobile */
   .cards-coffee, .cards-desserts, .cards-menu {grid-template-columns: 1fr;}
   h1 {font-size: 1.5rem;}
+  h3 {font-size: 0.9rem;}
   p, a {font-size: 0.6rem;}
   #logo {width: 180px; height: 60px;}
+  .card{flex: 1 1 calc(100%);}
 }
 
 @media (min-width: 576px) and (max-width: 768px) { /* Tablet */
   .cards-coffee, .cards-desserts, .cards-menu {grid-template-columns: 1fr;}
   h1 {font-size: 1.7rem;}
+  h3 {font-size: 1rem;}
   p, a {font-size: 0.7rem;}
   #logo {width: 190px; height: 70px;}
+  .card{flex: 1 1 calc(50% - 20px);}
 }
 
 @media (min-width: 769px) and (max-width: 992px) { /* Laptop */
   .cards-coffee, .cards-desserts, .cards-menu {grid-template-columns: repeat(2, 1fr);}
   h1 {font-size: 2rem;}
+  h3 {font-size: 1.2rem;}
   p, a {font-size: 0.9rem;}
 }
 
@@ -488,6 +499,8 @@ main   {
     grid-template-columns: repeat(3, 1fr);
   }
   h1 {font-size: 2.2rem;}
+  h3 {font-size: 1.4rem;}
   p, a {font-size: 1.2rem;}
   #logo {width: 200px; height: 80px;}
+  .card{flex: 1 1 calc(30% - 20px);}
 }
