@@ -6,31 +6,35 @@
   <title>Specials — Cozy Bean</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Шапка -->
-  <header id="header">
-    <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
-    <nav class="nav-bar">
-      <div class="nav-links">
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="specials.html" class="active">Specials</a>
-        <a href="blog.html">Blog</a>
-        <a href="location.html">Location</a>
-      </div>
-    </nav>
-    <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" class="login"></a>
-    <img src="images/bag.png" alt="orderbag" class="orderbag">
-  </header>
-
+<body class="special-page">
   <div class="layout">
-    <!-- Сайдбар -->
-    <aside id="section-sidebar">
+    <!-- Шапка -->
+    <header id="header">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Cozy Bean logo" id="logo">
+      </a>
+      <nav class="nav-bar" role="navigation" aria-label="Main Navigation">
+        <div class="nav-links">
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="specials.html" class="active">Specials</a>
+          <a href="blog.html">Blog</a>
+          <a href="location.html">Location</a>
+        </div>
+      </nav>
+      <a href="login.html" class="loginbtn" aria-label="Login page">
+        <img src="images/user.png" alt="Login icon" class="login">
+      </a>
+      <img src="images/bag.png" alt="Shopping bag" class="orderbag">
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="section-sidebar" aria-label="Page navigation">
       <nav>
         <a href="#top" class="active">Top</a><br>
         <a href="#morning-latte">Morning Latte</a>
-        <a href="#coffee-muffin">Coffee + Muffin Combo</a>
+        <a href="#coffee-muffin">Coffee + Muffin</a>
         <a href="#iced-coffee">Iced Coffee Deal</a>
         <a href="#family-pack">Family Pack</a>
         <a href="#student-discount">Student Discount</a>
@@ -38,45 +42,48 @@
     </aside>
 
     <!-- Контент -->
-    <main id="main">
-      <h2 id="top">Special Offers</h2>
+    <main id="main" role="main">
+      <section id="top">
+        <h2>Special Offers</h2>
+        <p>Enjoy our seasonal and daily offers — crafted specially for our coffee lovers!</p>
+      </section>
 
-      <div id="morning-latte">
-        <img src="images/latte.png" alt="Latte" width="200">
+      <section id="morning-latte">
+        <img src="images/latte.jpg" alt="Morning Latte coffee cup" width="200">
         <h3>Morning Latte</h3>
         <p>Start your day with our creamy latte. Only 900₸ until 12:00 PM!</p>
-      </div>
+      </section>
 
-      <div id="coffee-muffin">
-        <img src="images/coffemuffin.jpg" alt="Muffin" width="200">
+      <section id="coffee-muffin">
+        <img src="images/coffemuffin.jpg" alt="Coffee and muffin combo" width="200">
         <h3>Coffee + Muffin Combo</h3>
-        <p>Perfect match for just 1500₸.</p>
-      </div>
+        <p>Perfect match: Cappuccino and Muffin for just 1500₸.</p>
+      </section>
 
-      <div id="iced-coffee">
-        <img src="images/icecoffe.jpg" alt="Iced Coffee" width="200">
+      <section id="iced-coffee">
+        <img src="images/icecoffe.jpg" alt="Iced coffee in a glass" width="200">
         <h3>Iced Coffee Deal</h3>
-        <p>Stay cool – Buy 1, Get 1 Free!</p>
-      </div>
+        <p>Stay cool with our refreshing iced coffee – Buy 1, Get 1 Free!</p>
+      </section>
 
-      <div id="family-pack">
-        <img src="images/familysale.png" alt="Family Pack" width="200">
+      <section id="family-pack">
+        <img src="images/familysale.png" alt="Family Pack deal illustration" width="200">
         <h3>Family Pack</h3>
         <p>Order 4 cappuccinos and get 2 croissants free.</p>
-      </div>
+      </section>
 
-      <div id="student-discount">
-        <img src="images/studentsale.png" alt="Student Discount" width="200">
+      <section id="student-discount">
+        <img src="images/studentsale.png" alt="Student discount promotion" width="200">
         <h3>Student Discount</h3>
         <p>Show your student card and get 20% off any drink.</p>
-      </div>
+      </section>
     </main>
-  </div>
 
-  <!-- Подвал -->
-  <footer>
-    SE-2407<br>
-    Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
-  </footer>
+    <!-- Подвал -->
+    <footer>
+      SE-2407<br>
+      Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+    </footer>
+  </div>
 </body>
 </html>
