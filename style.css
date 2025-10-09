@@ -469,6 +469,7 @@ main   {
     border-radius: 10px;
     width: 50%;
 }
+
 @media (max-width: 575px) { /* Mobile */
   .cards-coffee, .cards-desserts, .cards-menu {grid-template-columns: 1fr;}
   h1 {font-size: 1.5rem;}
@@ -476,6 +477,14 @@ main   {
   p, a {font-size: 0.6rem;}
   #logo {width: 180px; height: 60px;}
   .card{flex: 1 1 calc(100%);}
+  /* Responsice Gallery Fix */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) { /* Tablet */
@@ -485,6 +494,19 @@ main   {
   p, a {font-size: 0.7rem;}
   #logo {width: 190px; height: 70px;}
   .card{flex: 1 1 calc(50% - 20px);}
+  /* Responsice Gallery Fix */
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  /* --- Responsive Sidebar and Layout --- */
+  #section-sidebar nav a {
+    display: inline-block;
+    margin: 5px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 992px) { /* Laptop */
@@ -492,6 +514,10 @@ main   {
   h1 {font-size: 2rem;}
   h3 {font-size: 1.2rem;}
   p, a {font-size: 0.9rem;}
+  /* Responsice Gallery Fix */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 993px) { /* Desktop */
@@ -503,46 +529,9 @@ main   {
   p, a {font-size: 1.2rem;}
   #logo {width: 200px; height: 80px;}
   .card{flex: 1 1 calc(30% - 20px);}
-}
-
-
-/* --- Responsive Sidebar and Layout --- */
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-  #section-sidebar {
-    position: relative;
-    height: auto;
-    padding: 10px;
-    text-align: center;
-  }
-  #section-sidebar nav a {
-    display: inline-block;
-    margin: 5px;
-  }
-}
-
-/* Sidebar hover effect */
-#section-sidebar a:hover {
-  color: #a98501;
-  transition: color 0.3s ease;
-
-}
-/* --- Responsive Gallery Fix --- */
-@media (max-width: 900px) {
+  /* Responsice Gallery Fix */
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* две картинки в ряд */
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr; /* одна картинка в ряд */
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto; /* сохраняет пропорции */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

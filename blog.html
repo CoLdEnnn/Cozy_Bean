@@ -2,95 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog — Cozy Bean</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="special-page">
   <div class="layout">
-    <!-- Header -->
-    <header id="header">
-      <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
-      <nav class="nav-barv mt-lg-2">
-        <div class="nav-links">
-          <a href="menu.html">Menu</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-          <a href="specials.html">Specials</a>
-          <a href="blog.html" class="active">Blog</a>
-          <a href="location.html">Location</a>
+    <!-- HEADER -->
+    <header id="header" class="px-3 py-2">
+      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/logo.png" id="logo" alt="Cozy Bean logo">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                  aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div id="mainNav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+              <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="specials.html">Specials</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
+              <li class="nav-item d-none d-lg-block">
+                <a href="login.html" class="nav-link" aria-label="Login">
+                  <img src="images/user.png" alt="Login icon" class="login">
+                </a>
+              </li>
+              <li class="nav-item d-none d-lg-block">
+                <img src="images/bag.png" alt="Shopping bag" class="orderbag">
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-      <a href="login.html" aria-label="Login">
-        <img src="images/user.png" alt="Login icon" class="login" />
-      </a>
-      <img src="images/bag.png" alt="Shopping bag" class="orderbag" />
     </header>
 
-    <!-- Sidebar -->
-    <aside id="section-sidebar" aria-label="Blog navigation">
-      <nav>
-        <a href="#top" class="active">Top</a><br />
-        <a href="#espresso-secret">The Secret of Perfect Espresso</a>
-        <a href="#coffee-beans">Top 3 Coffee Beans</a>
-        <a href="#coffee-happy">Why Coffee Makes You Happy</a>
-        <a href="#barista-tips">Our Barista’s Tips</a>
+    <!-- SIDEBAR -->
+    <aside id="section-sidebar" class="p-3" aria-label="Blog navigation">
+      <nav class="nav flex-column">
+        <a class="nav-link link-dark fw-semibold" href="#top">Top</a>
+        <a class="nav-link link-dark" href="#espresso-secret">The Secret of Perfect Espresso</a>
+        <a class="nav-link link-dark" href="#coffee-gallery">Gallery</a>
+        <a class="nav-link link-dark" href="#coffee-beans">Top 3 Coffee Beans</a>
+        <a class="nav-link link-dark" href="#coffee-happy">Why Coffee Makes You Happy</a>
+        <a class="nav-link link-dark" href="#barista-tips">Our Barista’s Tips</a>
       </nav>
     </aside>
 
-    <!-- Main Content -->
-    <main id="main" role="main">
-      <section id="top">
+    <!-- MAIN -->
+    <main id="main" role="main" class="p-3">
+      <section id="top" class="container text-center mb-4">
         <h2>Our Coffee Blog</h2>
-        <p>Learn more about the art of coffee — from bean to cup.</p>
+        <p class="mb-0">Learn the craft — from beans to perfect cup.</p>
       </section>
 
-      <section id="espresso-secret">
+      <section id="espresso-secret" class="container mb-5">
         <h3>The Secret of Perfect Espresso</h3>
         <p>Espresso is the base of almost every coffee drink. To make it perfect, you need finely ground beans, hot water at the right temperature, and a skilled barista.</p>
         <p><strong>Tip:</strong> Use freshly ground beans and preheated cups for the best taste.</p>
       </section>
 
-      <section id="coffee-gallery" aria-label="Coffee Gallery">
-        <div class="gallery">
-          <div class="gallery-item"><img src="images/image1.jpg" alt="Espresso preparation" /></div>
-          <div class="gallery-item"><img src="images/image2.jpg" alt="Coffee beans" /></div>
-          <div class="gallery-item"><img src="images/image3.jpg" alt="Barista pouring coffee" /></div>
-          <div class="gallery-item"><img src="images/image4.jpg" alt="Latte art in cup" /></div>
-          <div class="gallery-item"><img src="images/image5.png" alt="Coffee machine" /></div>
-          <div class="gallery-item"><img src="images/image6.png" alt="Coffee grinder" /></div>
-          <div class="gallery-item"><img src="images/image7.png" alt="Cup of coffee on table" /></div>
-          <div class="gallery-item"><img src="images/image8.jpg" alt="Espresso shot" /></div>
-          <div class="gallery-item"><img src="images/image9.jpg" alt="Coffee beans close-up" /></div>
+      <section id="coffee-gallery" class="container mb-5" aria-label="Coffee gallery">
+        <!-- Bootstrap responsive gallery -->
+        <div class="row g-2 row-cols-2 row-cols-md-3">
+          <div class="col"><img src="images/image1.jpg" class="img-fluid rounded" alt="Barista tamping coffee"></div>
+          <div class="col"><img src="images/image2.jpg" class="img-fluid rounded" alt="Roasted coffee beans"></div>
+          <div class="col"><img src="images/image3.jpg" class="img-fluid rounded" alt="Pouring espresso shot"></div>
+          <div class="col"><img src="images/image4.jpg" class="img-fluid rounded" alt="Latte art heart"></div>
+          <div class="col"><img src="images/image5.png" class="img-fluid rounded" alt="Espresso machine"></div>
+          <div class="col"><img src="images/image6.png" class="img-fluid rounded" alt="Coffee grinder"></div>
+          <div class="col"><img src="images/image7.png" class="img-fluid rounded" alt="Cup of coffee on table"></div>
+          <div class="col"><img src="images/image8.jpg" class="img-fluid rounded" alt="Espresso shot close-up"></div>
+          <div class="col"><img src="images/image9.jpg" class="img-fluid rounded" alt="Coffee beans macro"></div>
         </div>
       </section>
 
-      <section id="coffee-beans">
+      <section id="coffee-beans" class="container mb-5">
         <h3>Top 3 Coffee Beans</h3>
-        <ul>
+        <ul class="mb-0">
           <li><strong>Arabica:</strong> smooth, floral, slightly acidic.</li>
           <li><strong>Robusta:</strong> strong, bold, more caffeine.</li>
           <li><strong>Liberica:</strong> rare, smoky, exotic flavor.</li>
         </ul>
       </section>
 
-      <section id="coffee-happy">
+      <section id="coffee-happy" class="container mb-5">
         <h3>Why Coffee Makes You Happy</h3>
         <p>Coffee boosts dopamine and improves mood. More than a drink — it’s a ritual of comfort and joy.</p>
         <p>Sharing a cup of coffee with friends also increases social connection, making you happier.</p>
       </section>
 
-      <section id="barista-tips">
+      <section id="barista-tips" class="container mb-4">
         <h3>Our Barista’s Tips</h3>
         <p>Always clean your coffee machine, use filtered water, and never underestimate the importance of milk quality. Steamed milk can make or break your latte.</p>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-      SE-2407<br />
+    <!-- FOOTER -->
+    <footer class="text-center">
+      SE-2407<br>
       Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
     </footer>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
