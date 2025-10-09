@@ -504,3 +504,29 @@ main   {
   #logo {width: 200px; height: 80px;}
   .card{flex: 1 1 calc(30% - 20px);}
 }
+
+
+ 
+/* Carousel image height Аймаутка карусель крч не трогайте по брасткий  */
+#coffeeCarousel .carousel-item img {
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Smaller height on phones */
+@media (max-width: 576px) {
+  #coffeeCarousel .carousel-item img {
+    height: 220px;
+  }
+}
+
+/* Bootstrap cards image height */
+#cards-section .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Section spacing */
+main section {
+  margin-bottom: 1.5rem;
+}
