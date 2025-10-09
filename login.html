@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login — Cozy Bean Coffee Shop</title>
+</head>
+<body>
+    <!-- Шапка -->
+    <header id="header">
+        <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="specials.html">Specials</a>
+                <a href="blog.html">Blog</a>
+                <a href="location.html">Location</a>
+            </div>
+         </nav>
+    </header>
+
+    <main id="main">
+        <section>
+            <img src="images/coffee-hero.png" alt="Cozy coffee setup" id="mainphoto">
+        </section>
+
+        <section>
+            <h2>Welcome Back</h2>
+            <p>Sign in to enjoy your coffee journey ☕</p>
+
+            <form action="#" method="post" class="auth-form">
+                <div class="input-group">
+                <input type="text" name="username" required>
+                <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="input-group">
+                    <button type="submit" class="btn-primary">Login</button>
+                    <a href="signup.html"><button type="button" class="btn-secondary">Sign Up</button></a>
+                    <button type="button" class="btn-google">Login with Google</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="password-reset">
+            <img src="images/forgot-password.png" alt="Forgot password" class="password-img">
+            <p>Click here to reset your password and get back to your coffee.</p>
+            <a href="reset.html"><button type="button">Reset</button></a>
+        </section>
+    </main>
+
+    <footer>
+        SE-2407<br>
+        Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+    </footer>
+</body>
+</html>
