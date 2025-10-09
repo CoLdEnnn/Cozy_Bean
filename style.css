@@ -504,3 +504,45 @@ main   {
   #logo {width: 200px; height: 80px;}
   .card{flex: 1 1 calc(30% - 20px);}
 }
+
+
+/* --- Responsive Sidebar and Layout --- */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  #section-sidebar {
+    position: relative;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+  #section-sidebar nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+/* Sidebar hover effect */
+#section-sidebar a:hover {
+  color: #a98501;
+  transition: color 0.3s ease;
+
+}
+/* --- Responsive Gallery Fix --- */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* две картинки в ряд */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr; /* одна картинка в ряд */
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto; /* сохраняет пропорции */
+  }
+}
+
