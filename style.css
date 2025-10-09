@@ -469,6 +469,17 @@ main   {
     border-radius: 10px;
     width: 50%;
 }
+
+#coffeeCarousel .carousel-item img {
+  height: 420px;
+  object-fit: cover;
+}
+
+#cards-section .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
 @media (max-width: 575px) { /* Mobile */
   .cards-coffee, .cards-desserts, .cards-menu {grid-template-columns: 1fr;}
   h1 {font-size: 1.5rem;}
@@ -476,6 +487,7 @@ main   {
   p, a {font-size: 0.6rem;}
   #logo {width: 180px; height: 60px;}
   .card{flex: 1 1 calc(100%);}
+  #coffeeCarousel .carousel-item img {height: 220px;}
 }
 
 @media (min-width: 576px) and (max-width: 768px) { /* Tablet */
@@ -504,7 +516,6 @@ main   {
   #logo {width: 200px; height: 80px;}
   .card{flex: 1 1 calc(30% - 20px);}
 }
-
 
 /* --- Responsive Sidebar and Layout --- */
 @media (max-width: 900px) {
@@ -545,4 +556,3 @@ main   {
     height: auto; /* сохраняет пропорции */
   }
 }
-
