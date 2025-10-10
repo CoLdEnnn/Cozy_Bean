@@ -8,30 +8,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Шапка -->
-  <header id="header">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class=href="index.html">
-            <img src="images/logo.png" alt="Logo" id="logo" class="me-2">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-              <li class="nav-item"><a class="nav-link" href="specials.html">Specials</a></li>
-              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
-            </ul>
-          </div>
+  <!-- HEADER -->
+  <header id="header" class="px-3 py-2">
+    <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="images/logo.png" id="logo" alt="Cozy Bean logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="specials.html">Specials</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
+            <li class="nav-item d-none d-lg-block">
+              <a href="login.html" class="nav-link" aria-label="Login">
+                <img src="images/user.png" alt="Login icon" class="login">
+              </a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <img src="images/bag.png" alt="Shopping bag" class="orderbag">
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
-
+        
   <div class="layout">
     <!-- Сайдбар -->
     <aside id="section-sidebar">
