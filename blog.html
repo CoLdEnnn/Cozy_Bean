@@ -1,118 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Cozy Bean</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="special-page">
+<body>
   <div class="layout">
-    <!-- HEADER -->
-    <header id="header" class="px-3 py-2">
-      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <img src="images/logo.png" id="logo" alt="Cozy Bean logo">
-          </a>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                  aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div id="mainNav" class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
-              <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-              <li class="nav-item"><a class="nav-link" href="specials.html">Specials</a></li>
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
-              <li class="nav-item d-none d-lg-block">
-                <a href="login.html" class="nav-link" aria-label="Login">
-                  <img src="images/user.png" alt="Login icon" class="login">
-                </a>
-              </li>
-              <li class="nav-item d-none d-lg-block">
-                <img src="images/bag.png" alt="Shopping bag" class="orderbag">
-              </li>
-            </ul>
-          </div>
+    <!-- Шапка -->
+    <header id="header">
+      <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+      <nav class="nav-bar">
+        <div class="nav-links">
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="specials.html">Specials</a>
+          <a href="blog.html" class="active">Blog</a>
+          <a href="location.html">Location</a>
         </div>
       </nav>
+      <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" class="login"></a>
+      <img src="images/bag.png" alt="orderbag" class="orderbag">
     </header>
 
-    <!-- SIDEBAR -->
-    <aside id="section-sidebar" class="p-3" aria-label="Blog navigation">
-      <nav class="nav flex-column">
-        <a class="nav-link link-dark fw-semibold" href="#top">Top</a>
-        <a class="nav-link link-dark" href="#espresso-secret">The Secret of Perfect Espresso</a>
-        <a class="nav-link link-dark" href="#coffee-gallery">Gallery</a>
-        <a class="nav-link link-dark" href="#coffee-beans">Top 3 Coffee Beans</a>
-        <a class="nav-link link-dark" href="#coffee-happy">Why Coffee Makes You Happy</a>
-        <a class="nav-link link-dark" href="#barista-tips">Our Barista’s Tips</a>
+    <!-- Sidebar -->
+    <aside id="section-sidebar">
+      <nav>
+        <a href="#top" class="active">Top</a><br>
+        <a href="#coffee-blog">Our Coffee Blog</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#top3">Top 3 Coffee Beans</a>
+        <a href="#happiness">Coffee makes you happy</a>
+        <a href="#tips">Barista's Tips</a>
       </nav>
     </aside>
 
-    <!-- MAIN -->
-    <main id="main" role="main" class="p-3">
-      <section>
-        <div id="top" class="container text-center mb-4">
-          <h2>Our Coffee Blog</h2>
-          <p class="mb-0">Learn the craft — from beans to perfect cup.</p>
-        </div>
+    <!-- Контент -->
+    <main id="main">
+      <h2 id="top">Our Coffee Blog</h2>
 
-        <div id="espresso-secret" class="container mb-5">
-          <h3>The Secret of Perfect Espresso</h3>
-          <p>Espresso is the base of almost every coffee drink. To make it perfect, you need finely ground beans, hot water at the right temperature, and a skilled barista.</p>
-          <p><strong>Tip:</strong> Use freshly ground beans and preheated cups for the best taste.</p>
-        </div>
+      <section id="coffee-blog">
+        <h3>The Secret of Perfect Espresso</h3>
+        <p>Espresso is the base of almost every coffee drink. To make it perfect, you need finely ground beans, hot water at the right temperature, and a skilled barista.</p>
+        <p><b>Tip:</b> Use freshly ground beans and preheated cups for the best taste.</p>
+      </section>
 
-        <div id="coffee-gallery" class="container mb-5" aria-label="Coffee gallery">
-          <!-- Bootstrap responsive gallery -->
-          <div class="row g-2 row-cols-2 row-cols-md-3">
-            <div class="col"><img src="images/image1.jpg" class="img-fluid rounded" alt="Barista tamping coffee"></div>
-            <div class="col"><img src="images/image2.jpg" class="img-fluid rounded" alt="Roasted coffee beans"></div>
-            <div class="col"><img src="images/image3.jpg" class="img-fluid rounded" alt="Pouring espresso shot"></div>
-            <div class="col"><img src="images/image4.jpg" class="img-fluid rounded" alt="Latte art heart"></div>
-            <div class="col"><img src="images/image5.png" class="img-fluid rounded" alt="Espresso machine"></div>
-            <div class="col"><img src="images/image6.png" class="img-fluid rounded" alt="Coffee grinder"></div>
-            <div class="col"><img src="images/image7.png" class="img-fluid rounded" alt="Cup of coffee on table"></div>
-            <div class="col"><img src="images/image8.jpg" class="img-fluid rounded" alt="Espresso shot close-up"></div>
-            <div class="col"><img src="images/image9.jpg" class="img-fluid rounded" alt="Coffee beans macro"></div>
-          </div>
-        </div>
+      <section id="gallery" class="gallery">
+        <div class="gallery-item"><img src="images/image1.jpg" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image2.jpg" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image3.jpg" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image4.jpg" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image5.png" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image6.png" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image7.png" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image8.jpg" alt="coffee-photo"></div>
+        <div class="gallery-item"><img src="images/image9.jpg" alt="coffee-photo"></div>
+      </section>
+      
+      <section id="top3">
+        <h3>Top 3 Coffee Beans</h3>
+        <ul>
+          <li><b>Arabica:</b> smooth, floral, slightly acidic.</li>
+          <li><b>Robusta:</b> strong, bold, more caffeine.</li>
+          <li><b>Liberica:</b> rare, smoky, exotic flavor.</li>
+        </ul>
+      </section>
 
-        <div id="coffee-beans" class="container mb-5">
-          <h3>Top 3 Coffee Beans</h3>
-          <ul class="mb-0">
-            <li><strong>Arabica:</strong> smooth, floral, slightly acidic.</li>
-            <li><strong>Robusta:</strong> strong, bold, more caffeine.</li>
-            <li><strong>Liberica:</strong> rare, smoky, exotic flavor.</li>
-          </ul>
-        </div>
+      <section id="happiness">
+        <h3>Why Coffee Makes You Happy</h3>
+        <p>Coffee boosts dopamine and improves mood. More than a drink — it’s a ritual of comfort and joy.</p>
+        <p>Sharing a cup of coffee with friends also increases social connection, making you happier.</p>
+      </section>
 
-        <div id="coffee-happy" class="container mb-5">
-          <h3>Why Coffee Makes You Happy</h3>
-          <p>Coffee boosts dopamine and improves mood. More than a drink — it’s a ritual of comfort and joy.</p>
-          <p>Sharing a cup of coffee with friends also increases social connection, making you happier.</p>
-        </div>
-
-        <div id="barista-tips" class="container mb-4">
-          <h3>Our Barista’s Tips</h3>
-          <p>Always clean your coffee machine, use filtered water, and never underestimate the importance of milk quality. Steamed milk can make or break your latte.</p>
-        </div>
+      <section id="tips">
+        <h3>Our Barista’s Tips</h3>
+        <p>Always clean your coffee machine, use filtered water, and never underestimate the importance of milk quality. Steamed milk can make or break your latte.</p>
       </section>
     </main>
-
-    <!-- FOOTER -->
-    <footer>
-      SE-2407<br>
-      Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
-    </footer>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Подвал -->
+  <footer>
+    SE-2407<br>
+    Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+  </footer>
 </body>
 </html>

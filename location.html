@@ -8,37 +8,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header id="header" class="px-3 py-2">
-    <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="images/logo.png" id="logo" alt="Cozy Bean logo">
-        </
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </butto
-        <div id="mainNav" class="collapse navbar-collapse">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
-            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="specials.html">Specials</a></li>
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="location.html">Location</a></li>
-            <li class="nav-item d-none d-lg-block">
-              <a href="login.html" class="nav-link" aria-label="Login">
-                <img src="images/user.png" alt="Login icon" class="login">
-              </a>
-            </li>
-            <li class="nav-item d-none d-lg-block">
-              <img src="images/bag.png" alt="Shopping bag" class="orderbag">
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+   <!-- Шапка -->
+  <header id="header">
+      <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+      <nav class="nav-bar">
+          <div class="nav-links">
+              <a href="menu.html">Menu</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+              <a href="specials.html">Specials</a>
+              <a href="blog.html">Blog</a>
+              <a href="location.html" class="active">Location</a>
+          </div>
+       </nav>
+       <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" href="login.html" class="login"></a>
+       <img src="images/bag.png" alt="orderbag" class="orderbag">
   </header>
 
   <div class="layout">
@@ -52,13 +36,13 @@
     </aside>
 
     <!-- Контент -->
-    <main id="main" class="container-fluid">
-      <section id="top" class="py-3">
+    <main id="main">
+      <section id="top">
         <h2>Find Us</h2>
         <p>We’d love to welcome you at Cozy Bean ☕</p>
       </section>
 
-      <section class="py-3">
+      <section>
         <h3>Location Details</h3>
         <ul>
           <li><strong>Address:</strong> Astana, Main Street 25, Kazakhstan</li>
@@ -67,9 +51,9 @@
         </ul>
       </section>
 
-      <section id="location" class="py-3">
+      <section id="location">
         <h3>Our Location on Map</h3>
-        <div class="map-container mb-4">
+        <div>
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.123456789!2d71.430482!3d51.169411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTEuMTY5NDExLCA3McKwMjUnNDcuNyJlIQ!5e0!3m2!1sen!2skz!4v1690000000000!5m2!1sen!2skz" 
             width="100%" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -78,7 +62,7 @@
       </section>
 
       <section id="carousel-section" class="container my-4">
-        <h3 class="text-center mb-3">Gallery — Cozy Bean Moments</h3>
+        <h3>Gallery — Cozy Bean Moments</h3>
 
         <div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover">
           <div class="carousel-indicators">
@@ -134,8 +118,8 @@
         </div>
       </section>
       
-      <section id="cards-section" class="container my-4">
-        <h3 class="text-center mb-3">Our Branches</h3>
+      <section id="cards-section">
+        <h3>Our Branches</h3>
         
         <div class="card-group" aria-label="Branches">
           <div class="card">
@@ -163,7 +147,7 @@
           </div>
         </div>
       </section>    
-    <footer class="text-center py-3">
+    <footer>
       SE-2407<br>
       Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
     </footer>
