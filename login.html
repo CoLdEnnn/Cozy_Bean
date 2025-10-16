@@ -70,6 +70,32 @@
                       <button>Order now</button>
                       <button>Add to Cart</button>
                     </div>>
+    <!-- Шапка -->
+    <header id="header">
+        <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+        <nav>
+            <div class="nav-links">
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="specials.html">Specials</a>
+                <a href="blog.html">Blog</a>
+                <a href="location.html">Location</a>
+            </div>
+         </nav>
+    </header>
+
+    <main id="main">
+        <section>
+            <img src="images/coffee-hero.png" alt="Cozy coffee setup" id="mainphoto">
+
+            <h2>Welcome Back</h2>
+            <p>Sign in to enjoy your coffee journey ☕</p>
+
+            <form action="#" method="post" class="auth-form">
+                <div class="input-group">
+                    <input type="text" name="username" required>
+                    <label for="username">Username</label>
                 </div>
                 <div class="card">
                     <img src="images/mocha.png" alt="Mocha">
@@ -91,47 +117,22 @@
                       <button>Add to Cart</button>
                     </div>
                 </div>
-            </section>
-            <h3>Desserts</h3>
-            <section class="cards-desserts" id="desserts-section">
-                <!-- Десерты -->
-                <div class="card">
-                    <img src="images/croissant.png" alt="Croissant">
-                    <h3>Croissant</h3>
-                    <p>Freshly baked buttery croissant</p>
-                    <span>$2.20</span><br>
-                    <div class="card-buttons">
-                      <button>Order now</button>
-                      <button>Add to Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/cheesecake.png" alt="Cheesecake">
-                    <h3>Cheesecake</h3>
-                    <p>Classic New York cheesecake slice</p>
-                    <span>$4.00</span><br>
-                    <div class="card-buttons">
-                      <button>Order now</button>
-                      <button>Add to Cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="images/muffin.png" alt="Muffin">
-                    <h3>Muffin</h3>
-                    <p>Blueberry or chocolate chip muffin</p>
-                    <span>$2.50</span><br>
-                    <div class="card-buttons">
-                      <button>Order now</button>
-                      <button>Add to Cart</button>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!-- Подвал -->
-        <footer>
-            SE-2407<br>
-            Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
-        </footer>
-    </div>
+            </form>
+
+        <div class="password-reset">
+            <img src="images/forgot-password.png" alt="Forgot password" class="password-img">
+            <p>Click here to reset your password and get back to your coffee.</p>
+            <a href="reset.html"><button type="button">Reset</button></a>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        SE-2407<br>
+        Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+    </footer>
+
+    <!-- ✅ Добавлено: подключение JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
