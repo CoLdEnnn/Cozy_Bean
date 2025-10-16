@@ -24,7 +24,7 @@
          <img src="images/bag.png" alt="orderbag" class="orderbag">
     </header>
 
-  <div class="layout">
+    <div class="layout">
         <!-- Сайдбар -->
         <aside id="section-sidebar">
           <nav>
@@ -34,46 +34,31 @@
         </aside>
         <!-- Контент -->
         <main id="main">
-          <section>
-            <h2>Contact</h2>
-            <p>Welcome to our small coffee corner. Taste specialty coffee, pastries, and warm vibes.</p>
-          </section>
-          <section>
-            <h3>Opening hours</h3>
-            <p>Mon–Fri: 08:00–20:00 | Sat–Sun: 09:00–18:00</p>
-          </section>
-          <section id="contact-us">
-            <h3>Contact us</h3>
-            <form class="contact-form" action="#" method="post">
-              <div class="input-group">
-              <input id="name" class="text-input" type="text" name="name" required>
-              <label for="name">Name</label>
-          </div>
-        
-          <div class="input-group">
-              <input id="email" class="text-input" type="email" name="email" required>
-              <label for="email">Email</label>
-          </div>
-        
-          <div class="input-group">
-            <input id="message" class="text-input" type="text" required>
-            <label for="message">Message</label>
-          </div>
-        
-          <div>
-            <div class="btn-group" role="group" aria-label="Form actions">
-              <button type="submit" class="btn btn-primary">Send</button>
-              <button type="button" class="btn btn-outline-primary">Preview</button>
-              <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
-            </div>
-          </div>
+          <h2>Contact</h2>
+          <p>Welcome to our small coffee corner. Taste specialty coffee, pastries, and warm vibes.</p>
+
+          <h4>Opening hours</h4>
+          <p>Mon–Fri: 08:00–20:00 | Sat–Sun: 09:00–18:00</p>
+
+        <!-- Кнопка -->
+        <button id="openPopupBtn">Contact Us</button>
+              <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+        <button class="close-popup" id="closePopupBtn">&times;</button>
+        <h4>Contact Form</h4>
+        <form>
+          <input type="text" class="form-control" placeholder="Your Name" required>
+          <input type="email" class="form-control" placeholder="Your Email" required>
+          <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
+        </div>
       </section>
-    </main>
-    <footer class="footer">
+    </div>
+    <footer>
       SE-2407<br>
       Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
     </footer>
-  </div>
 </body>
+<script src="script.js" defer></script>
 </html>
