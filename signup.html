@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login — Cozy Bean Coffee Shop</title>
+    <title>Sign Up — Cozy Bean Coffee Shop</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <!-- Шапка -->
@@ -24,42 +25,45 @@
 
     <main id="main">
         <section>
-            <img src="images/coffee-hero.png" alt="Cozy coffee setup" id="mainphoto">
+            <img src="images/signup-hero.png" alt="Coffee registration" id="mainphoto">
+       
+            <h2>Create an Account</h2>
+            <p>Join the Cozy Bean family ☕ — enjoy personalized offers and loyalty bonuses!</p>
 
-            <h2>Welcome Back</h2>
-            <p>Sign in to enjoy your coffee journey ☕</p>
-
-            <form action="#" method="post" class="auth-form">
+            <form action="#" method="post" class="signup-form">
                 <div class="input-group">
                     <input type="text" name="username" required>
                     <label for="username">Username</label>
                 </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+
                 <div class="input-group">
                     <input type="password" name="password" required>
                     <label for="password">Password</label>
                 </div>
 
                 <div class="input-group">
-                    <button type="submit">Login</button>
-                    <a href="signup.html"><button type="button">Sign Up</button></a>
-                    <button type="button">Login with Google</button>
+                    <input type="password" name="confirm" required>
+                    <label for="confirm">Confirm Password</label>
+                </div>
+
+                <div class="input-group">
+                    <button type="submit">Sign Up</button>
+                    <a href="login.html"><button type="button">Back to Login</button></a>
                 </div>
             </form>
-
-        <div class="password-reset">
-            <img src="images/forgot-password.png" alt="Forgot password" class="password-img">
-            <p>Click here to reset your password and get back to your coffee.</p>
-            <a href="reset.html"><button type="button">Reset</button></a>
-        </div>
-    </section>
+        </section>
     </main>
-
     <footer>
         SE-2407<br>
         Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
     </footer>
 
     <!-- ✅ Добавлено: подключение JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
