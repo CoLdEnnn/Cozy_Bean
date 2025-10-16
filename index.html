@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cozy Bean</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="special-page">
     <div class="layout">
-        <!-- Шапка -->
-        <header id="header">
-            <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
-            <nav class="nav-bar mt-lg-2">
-                <div class="nav-links">
-                    <a href="menu.html">Menu</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="specials.html">Specials</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="location.html">Location</a>
-                </div>
-             </nav>
-             <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" href="login.html" class="login"></a>
-             <img src="images/bag.png" alt="orderbag" class="orderbag">
-        </header>
+      <!-- Шапка -->
+      <header id="header">
+          <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+          <nav class="nav-bar">
+              <div class="nav-links">
+                  <a href="menu.html">Menu</a>
+                  <a href="about.html">About Us</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="specials.html">Specials</a>
+                  <a href="blog.html">Blog</a>
+                  <a href="location.html">Location</a>
+              </div>
+           </nav>
+           <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" href="login.html" class="login"></a>
+           <img src="images/bag.png" alt="orderbag" class="orderbag">
+      </header>
+
         <!-- Сайдбар -->
         <aside id="section-sidebar">
             <nav>
@@ -42,83 +43,59 @@
             <div id="main-content-start">
                 <img src="images/photo.jpg" alt="mainphoto" id="mainphoto">
 
-                <div id="search-form">
-                    <input list="establishments" id="search-input" name="establishment" placeholder="Choose an establishment...">
-                    <datalist id="establishments">
-                        <option value="Almaty Tole Bi st.">
-                        <option value="Astana Mangilik El st.">
-                        <option value="Atyrau Balgimbayeva st.">
-                        <option value="Taraz Abaya St.">
-                    </datalist>
-                </div>
-            
-            <section class="Menu" id="menu-section">
-                <h1>Menu</h1>
-                <h5>New coffees in our menu</h5>
-                <section class="container mt-lg-4 px-sm-2 py-3">
-                    <div class="row">
-                    <div class="col-lg-6 col-md-12 p-3">
-                        <img src="images/flat-white.jpg" alt="flat-white-coffee" class="card-index">
-                        <p class="mb-4">Flat White</p>
+                <section class="Menu" id="menu-section">
+                  <div class="datetime">
+                    <h2>Current Date & Time</h2>
+                    <p id="date-time">Loading...</p>
+                  
+                    <div id="search-form">
+                      <input list="establishments" id="search-input" name="establishment" placeholder="Choose an establishment...">
+                      <datalist id="establishments">
+                          <option value="Almaty Tole Bi st.">
+                          <option value="Astana Mangilik El st.">
+                          <option value="Atyrau Balgimbayeva st.">
+                          <option value="Taraz Abaya St.">
+                      </datalist>
                     </div>
-                    <div class="col-lg-6 col-md-12 p-3">
-                        <img src="images/doppio.jpg" alt="doppio-coffee" class="card-index">
-                        <p class="mb-4">Doppio</p>
-                    </div>
-
-                    <div class="row mt-3">
-                    <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                        <img src="images/galao.jpg" alt="galao-coffee" class="card-index2">
-                        <p class="mb-4">Galao</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                        <img src="images/lungo.jpg" alt="lungo-coffee" class="card-index2">
-                        <p class="mb-4">Lungo</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                        <img src="images/irish.jpg" alt="irish-coffee" class="card-index2">
-                        <p>Irish</p>
-                    </div>
-                </section>
-                
-                <div class="cards-menu ">
-                        <div class="card-menu">
-                        <img src="images/espresso.png" alt="Espresso">
-                        <h3>Espresso</h3>
-                        <p>Strong and rich classic shot of coffee</p>
-                        <span>$2.50</span>
-                    </div>
-                    <div class="card-menu">
-                        <img src="images/latte.png" alt="Latte">
-                        <h3>Latte</h3>
-                        <p>Espresso with steamed milk and creamy foam</p>
-                        <span>$3.50</span>
-                    </div>
-                    <div class="card-menu">
-                        <img src="images/cappucino.png" alt="Cappuccino">
-                        <h3>Cappuccino</h3>
-                        <p>Balanced mix of espresso, milk, and foam</p>
-                        <span>$3.00</span>
-                    </div>
-                    <div class="card-menu">
-                        <img src="images/croissant.png" alt="Croissant">
-                        <h3>Croissant</h3>
-                        <p>Freshly baked buttery croissant</p>
-                        <span>$2.20</span>
-                    </div>
-                    <div class="card-menu">
-                        <img src="images/cheesecake.png" alt="Cheesecake">
-                        <h3>Cheesecake</h3>
-                        <p>Classic New York cheesecake slice</p>
-                        <span>$4.00</span>
-                    </div>
-                </div>
-                <a href="menu.html"><button>Press to see more</button></a>
+                  </div>
+                  <h1>Menu</h1>
+                  <div class="cards-menu ">
+                          <div class="card-menu">
+                          <img src="images/espresso.png" alt="Espresso">
+                          <h3>Espresso</h3>
+                          <p>Strong and rich classic shot of coffee</p>
+                          <span>$2.50</span>
+                      </div>
+                      <div class="card-menu">
+                          <img src="images/latte.png" alt="Latte">
+                          <h3>Latte</h3>
+                          <p>Espresso with steamed milk and creamy foam</p>
+                          <span>$3.50</span>
+                      </div>
+                      <div class="card-menu">
+                          <img src="images/cappucino.png" alt="Cappuccino">
+                          <h3>Cappuccino</h3>
+                          <p>Balanced mix of espresso, milk, and foam</p>
+                          <span>$3.00</span>
+                      </div>
+                      <div class="card-menu">
+                          <img src="images/croissant.png" alt="Croissant">
+                          <h3>Croissant</h3>
+                          <p>Freshly baked buttery croissant</p>
+                          <span>$2.20</span>
+                      </div>
+                      <div class="card-menu">
+                          <img src="images/cheesecake.png" alt="Cheesecake">
+                          <h3>Cheesecake</h3>
+                          <p>Classic New York cheesecake slice</p>
+                          <span>$4.00</span>
+                      </div>
+                  </div>
+                  <a href="menu.html"><button>Press to see more</button></a>
             </section>
 
             <section class="specials" id="specials-section">
                 <h1>Special Offers</h1>
-            
                 <div>
                     <h3>Morning Latte</h3>
                   <p>Start your day with our creamy latte. Only 900₸ until 12:00 PM!</p>

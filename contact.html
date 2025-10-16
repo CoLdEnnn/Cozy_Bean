@@ -4,186 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Cozy Bean</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    :root {
-      --coffee-brown: #7b4b2a;
-      --coffee-brown-dark: #5e3b21;
-    }
-
-    /* Popup overlay */
-    .popup-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      backdrop-filter: blur(3px);
-    }
-
-    /* Popup окно */
-    .popup-content {
-      background: #fff8f2;
-      padding: 2rem;
-      border-radius: 1rem;
-      width: 90%;
-      max-width: 450px;
-      position: relative;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      animation: popupFade 0.3s ease;
-    }
-
-    @keyframes popupFade {
-      from { transform: scale(0.95) translateY(-10px); opacity: 0; }
-      to { transform: scale(1) translateY(0); opacity: 1; }
-    }
-
-    /* Кнопка закрытия */
-    .close-popup {
-      position: absolute;
-      top: 12px;
-      right: 15px;
-      font-size: 22px;
-      cursor: pointer;
-      border: none;
-      background: none;
-      color: #999;
-      transition: color 0.2s;
-    }
-    .close-popup:hover {
-      color: var(--coffee-brown);
-    }
-
-    /* Заголовок формы */
-    .popup-content h4 {
-      text-align: center;
-      margin-bottom: 1.2rem;
-      font-weight: 600;
-      color: var(--coffee-brown);
-    }
-
-    /* Поля формы */
-    .popup-content .form-control {
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      padding: 0.6rem 0.8rem;
-      border: 1px solid #d9c4b0;
-      background-color: #fff;
-    }
-    .popup-content .form-control:focus {
-      box-shadow: 0 0 0 0.2rem rgba(123, 75, 42, 0.25);
-      border-color: var(--coffee-brown);
-    }
-
-    /* Кнопка отправки */
-    .popup-content button[type="submit"] {
-      border-radius: 8px;
-      font-weight: 500;
-      padding: 0.6rem;
-      background-color: var(--coffee-brown);
-      border: none;
-      transition: background 0.2s;
-    }
-    .popup-content button[type="submit"]:hover {
-      background-color: var(--coffee-brown-dark);
-    }
-
-    /* Основная кнопка */
-    #openPopupBtn {
-      padding: 0.8rem 1.5rem;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      background-color: var(--coffee-brown);
-      border: none;
-      color: #fff;
-      transition: background 0.2s, transform 0.15s;
-    }
-    #openPopupBtn:hover {
-      background-color: var(--coffee-brown-dark);
-      transform: translateY(-1px);
-    }
-
-    /* Заголовки */
-    h2, h4 {
-      color: var(--coffee-brown);
-      font-weight: 600;
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Шапка -->
-  <header id="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="images/logo.png" alt="Logo" id="logo" style="height: 32px;" class="me-2">
-          <span style="font-weight:600;color:var(--coffee-brown);">Cozy Bean</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="specials.html">Specials</a></li>
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="location.html">Location</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+    <!-- Шапка -->
+    <header id="header">
+        <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="specials.html">Specials</a>
+                <a href="blog.html">Blog</a>
+                <a href="location.html">Location</a>
+            </div>
+         </nav>
+         <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" href="login.html" class="login"></a>
+         <img src="images/bag.png" alt="orderbag" class="orderbag">
+    </header>
 
-  <!-- Контент -->
-  <main class="container my-5 text-center">
-    <h2 class="mb-3">Contact</h2>
-    <p class="mb-4 text-muted">Welcome to our small coffee corner. Taste specialty coffee, pastries, and warm vibes.</p>
-
-    <h4>Opening hours</h4>
-    <p class="mb-4 text-muted">Mon–Fri: 08:00–20:00 | Sat–Sun: 09:00–18:00</p>
-
-    <!-- Кнопка -->
-    <button id="openPopupBtn" class="shadow">Contact Us</button>
-  </main>
-
-  <!-- Popup форма -->
-  <div class="popup-overlay" id="popupOverlay">
-    <div class="popup-content">
-      <button class="close-popup" id="closePopupBtn">&times;</button>
-      <h4>Contact Form</h4>
-      <form>
-        <input type="text" class="form-control" placeholder="Your Name" required>
-        <input type="email" class="form-control" placeholder="Your Email" required>
-        <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn btn-primary w-100 mt-2">Send Message</button>
-      </form>
-    </div>
+  <div class="layout">
+        <!-- Сайдбар -->
+        <aside id="section-sidebar">
+          <nav>
+            <a href="#top" class="active">Top</a><br>
+            <a href="#contact-us">Contact us</a>
+          </nav>
+        </aside>
+        <!-- Контент -->
+        <main id="main">
+          <section>
+            <h2>Contact</h2>
+            <p>Welcome to our small coffee corner. Taste specialty coffee, pastries, and warm vibes.</p>
+          </section>
+          <section>
+            <h3>Opening hours</h3>
+            <p>Mon–Fri: 08:00–20:00 | Sat–Sun: 09:00–18:00</p>
+          </section>
+          <section id="contact-us">
+            <h3>Contact us</h3>
+            <form class="contact-form" action="#" method="post">
+              <div class="input-group">
+              <input id="name" class="text-input" type="text" name="name" required>
+              <label for="name">Name</label>
+          </div>
+        
+          <div class="input-group">
+              <input id="email" class="text-input" type="email" name="email" required>
+              <label for="email">Email</label>
+          </div>
+        
+          <div class="input-group">
+            <input id="message" class="text-input" type="text" required>
+            <label for="message">Message</label>
+          </div>
+        
+          <div>
+            <div class="btn-group" role="group" aria-label="Form actions">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="button" class="btn btn-outline-primary">Preview</button>
+              <button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      SE-2407<br>
+      Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+    </footer>
   </div>
-
-  <footer class="footer text-center mt-5 p-3 bg-dark">
-    SE-2407<br>
-    Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
-  </footer>
-
-  <script>
-    const openBtn = document.getElementById('openPopupBtn');
-    const closeBtn = document.getElementById('closePopupBtn');
-    const popup = document.getElementById('popupOverlay');
-
-    openBtn.addEventListener('click', () => popup.style.display = 'flex');
-    closeBtn.addEventListener('click', () => popup.style.display = 'none');
-    popup.addEventListener('click', (e) => {
-      if (e.target === popup) popup.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
