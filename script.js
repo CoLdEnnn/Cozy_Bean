@@ -1,4 +1,6 @@
-//Мадияр
+// ===========================
+// Мадияр
+// ===========================
 (() => {
   if (!document.getElementById('date-time')) {
     const span = document.createElement('span');
@@ -42,7 +44,6 @@ updateDateTime();
 // ===========================
 // Task 4 — Background Color Change (Specials)
 // ===========================
-// --- Task 4: Background Color Change (Specials)
 (() => {
   const btn = document.getElementById('change-bg');
   if (!btn) return; // не на этой странице — выходим
@@ -55,11 +56,10 @@ updateDateTime();
 
   // применяем цвет к main + всем секциям
   const applyColor = (color) => {
-    main.style.backgroundColor = color;      // фон между карточками
-    sections.forEach(s => { s.style.backgroundColor = color; }); // фон самих карточек
+    main.style.backgroundColor = color;
+    sections.forEach(s => { s.style.backgroundColor = color; });
   };
 
-  // восстановить последний выбранный цвет
   let i = Number(localStorage.getItem('bgIndex') || 0) % palette.length;
   if (Number.isNaN(i)) i = 0;
   applyColor(palette[i]);
@@ -78,14 +78,12 @@ updateDateTime();
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".auth-form");
-  if (!form) return; // если форма не найдена — выходим
+  if (!form) return;
 
   const username = form.querySelector("input[name='username']");
   const password = form.querySelector("input[name='password']");
 
-  // Функция для отображения ошибки под полем
   function showError(input, message) {
-    // Удалим старое сообщение, если есть
     const oldError = input.parentNode.querySelector(".error-msg");
     if (oldError) oldError.remove();
 
@@ -100,13 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    // Очистим старые ошибки
     form.querySelectorAll(".error-msg").forEach(el => el.remove());
 
     let valid = true;
 
-    // Проверка имени
     if (username.value.trim() === "") {
       showError(username, "Username is required");
       valid = false;
@@ -115,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     }
 
-    // Проверка пароля
     if (password.value.trim() === "") {
       showError(password, "Password is required");
       valid = false;
@@ -124,19 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     }
 
-    // Если всё правильно
-    if (validucce) {
-      alert("Login sssful!");
+    if (valid) {
+      alert("Login successful!");
       form.reset();
     }
   });
 });
+
+
 // ===========================
-// Аймаут 1 таска — Signup Validation
+// Аймаут 2 таска — Signup Validation
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".signup-form");
-  if (!form) return; // если не на странице signup — выходим
+  if (!form) return;
 
   const username = form.querySelector("input[name='username']");
   const email = form.querySelector("input[name='email']");
@@ -160,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
     form.querySelectorAll(".error-msg").forEach(el => el.remove());
     let valid = true;
 
-    // Проверки
     if (username.value.trim().length < 3) {
       showError(username, "Username must be at least 3 characters");
       valid = false;
@@ -189,11 +183,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const openBtn = document.getElementById('openPopupBtn');
-const closeBtn = document.getElementById('closePopupBtn');
-const popup = document.getElementById('popupOverlay')
-openBtn.addEventListener('click', () => popup.style.display = 'flex');
-closeBtn.addEventListener('click', () => popup.style.display = 'none');
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) popup.style.display = 'none';
+// ===========================
+// Алия Task 3 Popup Subscription Form
+// ===========================
+document.addEventListener("DOMContentLoaded", () => {
+  const openBtn = document.getElementById('openPopupBtn');
+  const closeBtn = document.getElementById('closePopupBtn');
+  const popup = document.getElementById('popupOverlay');
+
+  if (!openBtn || !closeBtn || !popup) return; // если элементов нет — не выполняем
+
+  openBtn.addEventListener('click', () => {
+    popup.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) popup.style.display = 'none';
+  });
 });
