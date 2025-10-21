@@ -350,10 +350,14 @@ main   {
     padding-top: 50px;
 }
 
-#section-sidebar a.active {
-    font-weight: 700;
-    border-left-color: #000000;
+#section-sidebar nav a.active {
+  color: #ff9800;
+  font-weight: bold;
+  border-left: 3px solid #ff9800;
+  padding-left: 6px;
+  transition: all 0.3s ease;
 }
+
 
 main section {
     min-height: 80vh; 
@@ -648,6 +652,42 @@ h2, h4 {
     width: 100%;
     height: auto;
   }
+}
+
+.rating {
+  display: inline-flex;
+  gap: 5px;
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 8px;
+}
+
+.star {
+  color: #aaa;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.star.selected {
+  color: gold;
+  transform: scale(1.1);
+}
+
+.readmore-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid #c49b63;
+  border-radius: 6px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.readmore-btn:hover {
+  background: #c49b63;
+  color: white;
 }
 
 @media (min-width: 576px) and (max-width: 767px) { /* Tablet */

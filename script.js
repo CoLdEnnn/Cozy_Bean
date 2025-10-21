@@ -10,6 +10,9 @@
   }
 })();   
 
+// ===========================
+// Аккордеон
+// ===========================
 let accordionButtons = document.querySelectorAll(".accordion-btn");
 
 accordionButtons.forEach(button => {
@@ -24,6 +27,9 @@ accordionButtons.forEach(button => {
   });
 });
 
+// ===========================
+// Время
+// ===========================
 function updateDateTime() {
   const now = new Date(); 
   const options = { 
@@ -37,24 +43,42 @@ function updateDateTime() {
   document.getElementById('date-time').textContent = now.toLocaleString('en-US', options);
 }
 
-setInterval(updateDateTime, 1000);
-updateDateTime();
+// ===========================
+// Кнопка "Show Time"
+// ===========================
+const timeButton = document.getElementById('show-time-btn');
+const timeDisplay = document.getElementById('date-time');
+let timer = null;
+
+if (timeButton && timeDisplay) {
+  timeButton.addEventListener('click', () => {
+    if (timeDisplay.style.display === 'none') {
+      timeDisplay.style.display = 'block';
+      updateDateTime();
+      timer = setInterval(updateDateTime, 1000);
+      timeButton.textContent = 'Hide Time';
+    } else {
+
+      timeDisplay.style.display = 'none';
+      clearInterval(timer);
+      timeButton.textContent = 'Show Time';
+    }
+  });
+}
 
 
 // ===========================
-// Task 4 — Background Color Change (Specials)
+// Background Color Change (Specials)
 // ===========================
 (() => {
   const btn = document.getElementById('change-bg');
   if (!btn) return; // не на этой странице — выходим
 
   const main = document.getElementById('main') || document.body;
-  const sections = Array.from(main.querySelectorAll('section')); // все карточки
+  const sections = Array.from(main.querySelectorAll('section'));
 
-  // мягкая бренд-палитра
   const palette = ['#fef7de', '#fff8e6', '#f7f4ef', '#f3efe7', '#fcf9f0'];
 
-  // применяем цвет к main + всем секциям
   const applyColor = (color) => {
     main.style.backgroundColor = color;
     sections.forEach(s => { s.style.backgroundColor = color; });
@@ -74,7 +98,7 @@ updateDateTime();
 
 
 // ===========================
-// Аймаут 1 таска — Form Validation (Login Page)
+// Form Validation (Login Page)
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".auth-form");
@@ -127,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===========================
-// Аймаут 2 таска — Signup Validation
+// Signup Validation
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".signup-form");
@@ -184,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===========================
-// Алия Task 3 Popup Subscription Form
+// Popup Subscription Form
 // ===========================
 document.addEventListener("DOMContentLoaded", () => {
   const openBtn = document.getElementById('openPopupBtn');
@@ -204,4 +228,87 @@ document.addEventListener("DOMContentLoaded", () => {
   popup.addEventListener('click', (e) => {
     if (e.target === popup) popup.style.display = 'none';
   });
+});
+
+// ----------- Рейтинг ----------- //
+const ratings = document.querySelectorAll('.rating');
+
+ratings.forEach(rating => {
+  const stars = rating.querySelectorAll('.star');
+  const itemName = rating.dataset.item;
+  const savedRating = localStorage.getItem(`rating_${itemName}`) || 0;
+
+  if (savedRating > 0) highlightStars(stars, savedRating);
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = parseInt(star.dataset.value);
+      highlightStars(stars, value);
+      localStorage.setItem(`rating_${itemName}`, value);
+    });
+  });
+});
+
+function highlightStars(stars, value) {
+  stars.forEach((s, i) => {
+    if (i < value) s.classList.add('selected');
+    else s.classList.remove('selected');
+  });
+}
+
+// ----------- Read More ----------- //
+const aboutSection = document.querySelector('.About');
+if (aboutSection) {
+  const extraText = document.createElement('p');
+  extraText.textContent =
+    "Our Coffee sustainably sourced beans roasted to perfection for the best flavor experience.";
+  extraText.classList.add('hidden-text');
+  extraText.style.display = 'none';
+
+  const button = document.createElement('button');
+  button.textContent = 'Read more';
+  button.classList.add('readmore-btn');
+
+  const lastParagraph = aboutSection.querySelector('p:last-of-type');
+  lastParagraph.insertAdjacentElement('afterend', extraText);
+  extraText.insertAdjacentElement('afterend', button);
+
+  button.addEventListener('click', () => {
+    const isVisible = extraText.style.display === 'block';
+    extraText.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'Read more' : 'Show less';
+  });
+}
+
+// ===========================
+// Keyboard Navigation for Sidebar
+// ===========================
+
+const sidebarLinks = document.querySelectorAll('#section-sidebar nav a');
+let currentIndex = 0;
+
+sidebarLinks[currentIndex].focus();
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+
+    sidebarLinks[currentIndex].classList.remove('active');
+
+    if (e.key === 'ArrowDown') {
+      currentIndex = (currentIndex + 1) % sidebarLinks.length;
+    } else if (e.key === 'ArrowUp') {
+      currentIndex = (currentIndex - 1 + sidebarLinks.length) % sidebarLinks.length;
+    }
+
+    sidebarLinks[currentIndex].classList.add('active');
+
+    sidebarLinks[currentIndex].focus();
+
+    const targetId = sidebarLinks[currentIndex].getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 });

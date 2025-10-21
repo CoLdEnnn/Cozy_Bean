@@ -44,10 +44,13 @@
                 <img src="images/photo.jpg" alt="mainphoto" id="mainphoto">
 
                 <section class="Menu" id="menu-section">
-                  <div class="datetime">
-                    <h2>Current Date & Time</h2>
-                    <p id="date-time">Loading...</p>
-                  
+                  <div>
+                    <div class="datetime">
+                      <h2>Current Date & Time</h2>
+                      <p id="date-time" style="display: none"></p>
+                      <button id="show-time-btn">Show Time</button>
+                    </div>
+                    
                     <div id="search-form">
                       <input list="establishments" id="search-input" name="establishment" placeholder="Choose an establishment...">
                       <datalist id="establishments">
@@ -65,30 +68,70 @@
                           <h3>Espresso</h3>
                           <p>Strong and rich classic shot of coffee</p>
                           <span>$2.50</span>
+                          
+                        <div class="rating" data-item="espresso">
+                          <span class="star" data-value="1">☆</span>
+                          <span class="star" data-value="2">☆</span>
+                          <span class="star" data-value="3">☆</span>
+                          <span class="star" data-value="4">☆</span>
+                          <span class="star" data-value="5">☆</span>
+                        </div>
                       </div>
                       <div class="card-menu">
                           <img src="images/latte.png" alt="Latte">
                           <h3>Latte</h3>
                           <p>Espresso with steamed milk and creamy foam</p>
                           <span>$3.50</span>
+
+                        <div class="rating" data-item="espresso">
+                          <span class="star" data-value="1">☆</span>
+                          <span class="star" data-value="2">☆</span>
+                          <span class="star" data-value="3">☆</span>
+                          <span class="star" data-value="4">☆</span>
+                          <span class="star" data-value="5">☆</span>
+                        </div>
                       </div>
                       <div class="card-menu">
                           <img src="images/cappucino.png" alt="Cappuccino">
                           <h3>Cappuccino</h3>
                           <p>Balanced mix of espresso, milk, and foam</p>
                           <span>$3.00</span>
+
+                        <div class="rating" data-item="espresso">
+                          <span class="star" data-value="1">☆</span>
+                          <span class="star" data-value="2">☆</span>
+                          <span class="star" data-value="3">☆</span>
+                          <span class="star" data-value="4">☆</span>
+                          <span class="star" data-value="5">☆</span>
+                        </div>
                       </div>
                       <div class="card-menu">
                           <img src="images/croissant.png" alt="Croissant">
                           <h3>Croissant</h3>
                           <p>Freshly baked buttery croissant</p>
                           <span>$2.20</span>
+
+                        <div class="rating" data-item="espresso">
+                          <span class="star" data-value="1">☆</span>
+                          <span class="star" data-value="2">☆</span>
+                          <span class="star" data-value="3">☆</span>
+                          <span class="star" data-value="4">☆</span>
+                          <span class="star" data-value="5">☆</span>
+                        </div>
                       </div>
                       <div class="card-menu">
                           <img src="images/cheesecake.png" alt="Cheesecake">
                           <h3>Cheesecake</h3>
                           <p>Classic New York cheesecake slice</p>
                           <span>$4.00</span>
+
+                        <div class="rating" data-item="espresso">
+                          <span class="star" data-value="1">☆</span>
+                          <span class="star" data-value="2">☆</span>
+                          <span class="star" data-value="3">☆</span>
+                          <span class="star" data-value="4">☆</span>
+                          <span class="star" data-value="5">☆</span>
+                        </div>
                       </div>
                   </div>
                   <a href="menu.html"><button>Press to see more</button></a>
@@ -145,8 +188,6 @@
                 <h3>Our Story</h3>
                 <p>Cozy Bean started as a small neighborhood spot in 2020. Our dream was simple: bring people together over great coffee and homemade pastries. 
                 <br>From day one, our mission has been to create a warm and welcoming atmosphere where everyone feels at home.</p>
-                <h3>Our Coffee</h3>
-                <p>Sustainably sourced beans roasted to perfection for the best flavor experience.</p>
                 <img src="images/coffee-beans.jpg" alt="coffee beans" class="coffee-beans">
             </section>
 
