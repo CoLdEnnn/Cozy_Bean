@@ -313,12 +313,15 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// ===========================
+// Sound Effects and Animations
+// ===========================
 document.addEventListener('DOMContentLoaded', function() {
     
-    
+    // Create audio context for sound effects
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     
-    
+    // Function to play notification sound
     function playNotificationSound() {
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
@@ -335,13 +338,15 @@ document.addEventListener('DOMContentLoaded', function() {
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.1);
     }
-
+    
+    // Function to add click sound to buttons
     function addClickSound(element) {
         element.addEventListener('click', function(e) {
             playNotificationSound();
         });
     }
     
+    // Function to add hover animation
     function addHoverAnimation(element) {
         element.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.05)';
@@ -353,6 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Function to add bounce animation on click
     function addBounceAnimation(element) {
         element.addEventListener('click', function() {
             this.style.transform = 'scale(0.95)';
@@ -365,6 +371,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Apply sound and animations to buttons
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         addClickSound(button);
@@ -372,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addBounceAnimation(button);
     });
     
+    // Special handler for Contact Us button
     const contactBtn = document.getElementById('openPopupBtn');
     if (contactBtn) {
         contactBtn.addEventListener('click', function(e) {
@@ -379,16 +387,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { capture: true });
     }
     
+    // Apply hover animations to navigation links
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         addHoverAnimation(link);
     });
     
+    // Apply animations to images
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         addHoverAnimation(img);
     });
     
+    // Add fade-in animation to main content
     const mainContent = document.querySelector('main');
     if (mainContent) {
         mainContent.style.opacity = '0';
@@ -401,6 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
     
+    // Add accordion animation for about.html
     const accordionBtns = document.querySelectorAll('.accordion-btn');
     accordionBtns.forEach(btn => {
         btn.addEventListener('click', function() {
