@@ -552,8 +552,8 @@ if (menuSection) {
 const showAffordableBtn = document.createElement("button");
 showAffordableBtn.textContent = "Show Affordable Drinks (under $3.50)";
 showAffordableBtn.style.marginTop = "15px";
-showAffordableBtn.style.padding = "10px 20px";
-showAffordableBtn.style.borderRadius = "8px";
+showAffordableBtn.style.padding = "7px";
+showAffordableBtn.style.borderRadius = "15px";
 showAffordableBtn.style.background = "#7b4b2a";
 showAffordableBtn.style.color = "white";
 showAffordableBtn.style.cursor = "pointer";
