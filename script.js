@@ -489,6 +489,4 @@ if (moodBtn) {
     showCoffee(getCoffeeSuggestion);
   });
 }
-
-
 });
