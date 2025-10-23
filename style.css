@@ -801,7 +801,10 @@ body.dark-mode header,
 body.dark-mode footer,
 body.dark-mode aside {
   background-color: #1f1f1f;
+  
 }
+
+
 
 body.dark-mode h1,
 body.dark-mode h2,
