@@ -490,3 +490,96 @@ if (moodBtn) {
   });
 }
 });
+// ===========================
+// Task 3 — Advanced JS Concepts (Aimaut)
+// ===========================
+
+// OBJECTS AND METHODS
+const coffeeMenu = {
+  espresso: { price: 2.5, desc: "Strong and rich classic shot of coffee" },
+  latte: { price: 3.5, desc: "Espresso with steamed milk and creamy foam" },
+  cappuccino: { price: 3.0, desc: "Balanced mix of espresso, milk, and foam" },
+  croissant: { price: 2.2, desc: "Freshly baked buttery croissant" },
+  cheesecake: { price: 4.0, desc: "Classic New York cheesecake slice" },
+
+  // Метод для вывода описания напитка
+  showInfo(itemName) {
+    if (this[itemName]) {
+      alert(`${itemName.toUpperCase()} — $${this[itemName].price}\n${this[itemName].desc}`);
+    } else {
+      alert("Item not found in menu.");
+    }
+  }
+};
+
+// ARRAYS AND LOOPS
+const coffeeArray = [
+  { name: "Espresso", price: 2.5, img: "images/espresso.png" },
+  { name: "Latte", price: 3.5, img: "images/latte.png" },
+  { name: "Cappuccino", price: 3.0, img: "images/cappucino.png" },
+  { name: "Croissant", price: 2.2, img: "images/croissant.png" },
+  { name: "Cheesecake", price: 4.0, img: "images/cheesecake.png" }
+];
+
+// создаём карточки динамически
+const menuSection = document.querySelector(".cards-menu");
+if (menuSection) {
+  menuSection.innerHTML = ""; // очищаем
+  for (let i = 0; i < coffeeArray.length; i++) {
+    const c = coffeeArray[i];
+    const card = document.createElement("div");
+    card.className = "card-menu";
+    card.innerHTML = `
+      <img src="${c.img}" alt="${c.name}">
+      <h3>${c.name}</h3>
+      <p>Price: $${c.price.toFixed(2)}</p>
+      <button class="info-btn" data-item="${c.name.toLowerCase()}">Details</button>
+    `;
+    menuSection.appendChild(card);
+  }
+
+  // слушатели на кнопки “Details” (чтобы alert точно работал)
+  document.querySelectorAll(".info-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const item = e.target.dataset.item;
+      coffeeMenu.showInfo(item);
+    });
+  });
+}
+
+// HIGHER-ORDER FUNCTIONS (map/filter/forEach)
+// создаём кнопку
+const showAffordableBtn = document.createElement("button");
+showAffordableBtn.textContent = "Show Affordable Drinks (under $3.50)";
+showAffordableBtn.style.marginTop = "15px";
+showAffordableBtn.style.padding = "10px 20px";
+showAffordableBtn.style.borderRadius = "8px";
+showAffordableBtn.style.background = "#7b4b2a";
+showAffordableBtn.style.color = "white";
+showAffordableBtn.style.cursor = "pointer";
+
+const cheapList = document.createElement("div");
+cheapList.id = "cheap-list";
+
+const menuWrapper = document.getElementById("menu-section");
+if (menuWrapper) {
+  menuWrapper.appendChild(showAffordableBtn);
+  menuWrapper.appendChild(cheapList);
+
+  showAffordableBtn.addEventListener("click", () => {
+    // очищаем перед каждым выводом
+    cheapList.innerHTML = "";
+
+    const cheapCoffee = coffeeArray.filter(item => item.price < 3.5);
+    cheapList.innerHTML = "<h3>Affordable Choices</h3>";
+
+    cheapCoffee.forEach(coffee => {
+      const p = document.createElement("p");
+      p.textContent = `${coffee.name} — $${coffee.price}`;
+      cheapList.appendChild(p);
+    });
+
+    // выводим названия в консоль тоже
+    console.log("Cheap items:", cheapCoffee.map(i => i.name));
+  });
+}
