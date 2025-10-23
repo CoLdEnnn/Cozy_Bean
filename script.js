@@ -428,4 +428,67 @@ document.addEventListener('DOMContentLoaded', function() {
             playNotificationSound();
         });
     });
+
+
+    //маДИЯР 1 таск 
+    // =========================
+    // ===========================
+// 🌙 Task 1 — Day/Night Mode
+// ===========================
+(() => {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  const applyTheme = (theme) => {
+    document.body.classList.toggle('dark-mode', theme === 'dark');
+  };
+
+  // Восстановить из localStorage
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+
+  btn.addEventListener('click', () => {
+    const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+})();
+
+
+// ===========================
+// ☕ Task 2 — Callback + Switch Statement
+// ===========================
+
+// Функция с использованием switch для выбора кофе по времени суток
+function getCoffeeSuggestion(hour) {
+  let suggestion = "";
+  switch (true) {
+    case hour < 12:
+      suggestion = "☀️ Good morning! Try our energizing Espresso to start your day!";
+      break;
+    case hour < 18:
+      suggestion = "🌤 Afternoon mood? A creamy Latte would be perfect for you!";
+      break;
+    default:
+      suggestion = "🌙 Evening vibes — relax with a cozy Cappuccino before bed.";
+  }
+  return suggestion;
+}
+
+// Функция callback — принимает другую функцию и выполняет её
+function showCoffee(callback) {
+  const result = callback(new Date().getHours());
+  document.getElementById("mood-result").textContent = result;
+}
+
+// Обработчик нажатия кнопки
+const moodBtn = document.getElementById("mood-btn");
+if (moodBtn) {
+  moodBtn.addEventListener("click", () => {
+    showCoffee(getCoffeeSuggestion);
+  });
+}
+
+
 });
