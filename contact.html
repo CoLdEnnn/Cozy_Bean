@@ -1,65 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Cozy Bean</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Cozy Bean</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/coffeebeans.ico" type="image/png" />
+  </head>
+  <body>
     <!-- Шапка -->
     <header id="header">
-        <a href="index.html"><img src="images/logo.png" alt="Logo" id="logo"></a>
-        <nav class="nav-bar">
-            <div class="nav-links">
-                <a href="menu.html">Menu</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html" class="active">Contact</a>
-                <a href="specials.html">Specials</a>
-                <a href="blog.html">Blog</a>
-                <a href="location.html">Location</a>
-            </div>
-         </nav>
-         <a href="login.html" class="loginbtn"><img src="images/user.png" alt="login" href="login.html" class="login"></a>
-         <img src="images/bag.png" alt="orderbag" class="orderbag">
-         <button id="theme-toggle" class="theme-btn">☀️ / 🌙</button>
-        </header>
+      <a href="index.html"
+        ><img src="images/logo.png" alt="Logo" id="logo"
+      /></a>
+      <nav class="nav-bar">
+        <div class="nav-links">
+          <a href="menu.html">Menu</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="specials.html">Specials</a>
+          <a href="blog.html">Blog</a>
+          <a href="location.html">Location</a>
+        </div>
+      </nav>
+      <a href="login.html"
+        ><img src="images/user.png" alt="login" class="login"
+      /></a>
+      <img src="images/bag.png" alt="orderbag" class="orderbag" />
+      <button id="theme-toggle" class="theme-btn">☀️ / 🌙</button>
+    </header>
 
     <div class="layout">
-        <!-- Сайдбар -->
-        <aside id="section-sidebar">
-          <nav>
-            <a href="#top" class="active">Top</a><br>
-            <a href="#contact-us">Contact us</a>
-          </nav>
-        </aside>
-        <!-- Контент -->
-        <main id="main">
+      <!-- Сайдбар -->
+      <aside id="section-sidebar">
+        <nav>
+          <a href="#top" class="active">Top</a><br />
+          <a href="#contact-us">Contact us</a>
+        </nav>
+      </aside>
+      <!-- Контент -->
+      <main id="main">
+        <section>
           <h2>Contact</h2>
-          <p>Welcome to our small coffee corner. Taste specialty coffee, pastries, and warm vibes.</p>
+          <p>
+            Welcome to our small coffee corner. Taste specialty coffee,
+            pastries, and warm vibes.
+          </p>
 
           <h4>Opening hours</h4>
           <p>Mon–Fri: 08:00–20:00 | Sat–Sun: 09:00–18:00</p>
 
-        <!-- Кнопка -->
-        <button id="openPopupBtn">Contact Us</button>
-              <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content">
-        <button class="close-popup" id="closePopupBtn">&times;</button>
-        <h4>Contact Form</h4>
-        <form>
-          <input type="text" class="form-control" placeholder="Your Name" required>
-          <input type="email" class="form-control" placeholder="Your Email" required>
-          <textarea class="form-control" rows="3" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-        </div>
-      </section>
+          <!-- Кнопка -->
+          <button id="openPopupBtn">Contact Us</button>
+          <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-content">
+              <button class="close-popup" id="closePopupBtn">&times;</button>
+              <h4>Contact Form</h4>
+              <form>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
+
+    <!-- Подвал -->
     <footer>
-      SE-2407<br>
-      Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar Amanzhol
+      SE-2407<br />
+      Aliya Galidullayeva, Damir Ushkempir, Aimaut Bolatkhanuly, Madiyar
+      Amanzhol
     </footer>
-</body>
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="contact.js" defer></script>
+  </body>
 </html>
