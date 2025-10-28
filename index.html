@@ -6,7 +6,18 @@
     <title>Cozy Bean</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="images/coffeebeans.ico" type="image/png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
+
+  <div id="overlay"></div>
+  <div id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <div id="cart-total">
+      <strong>Total: </strong><span id="total-price">$0</span>
+    </div>
+    <button id="close-cart">Close</button>
+  </div>
 
   <body class="special-page">
     <div class="layout">
@@ -60,19 +71,14 @@
               </div>
             </div>
 
-            <div id="search-form">
+            <h3>Search Establishment</h3>
+            <div class="dropdown">
               <input
-                list="establishments"
-                id="search-input"
-                name="establishment"
-                placeholder="Choose an establishment..."
+                type="text"
+                id="autocompleteInput"
+                placeholder="Write your city..."
               />
-              <datalist id="establishments">
-                <option value="Almaty Tole Bi st."></option>
-                <option value="Astana Mangilik El st."></option>
-                <option value="Atyrau Balgimbayeva st."></option>
-                <option value="Taraz Abaya St."></option>
-              </datalist>
+              <ul id="suggestionsList"></ul>
             </div>
 
             <h1>Menu</h1>
@@ -235,34 +241,7 @@
               We'd love to hear from you! Whether you have questions, feedback,
               or just want to say hello, feel free to reach out.
             </p>
-            <button id="openPopupBtn">Contact Us</button>
-            <div class="popup-overlay" id="popupOverlay">
-              <div class="popup-content">
-                <button class="close-popup" id="closePopupBtn">&times;</button>
-                <h4>Contact Form</h4>
-                <form>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Your Name"
-                    required
-                  />
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Your Email"
-                    required
-                  />
-                  <textarea
-                    class="form-control"
-                    rows="3"
-                    placeholder="Your Message"
-                    required
-                  ></textarea>
-                  <button type="submit">Send Message</button>
-                </form>
-              </div>
-            </div>
+            <a href="contact.html" id="contact-main">Contact us</a>
           </section>
         </div>
       </main>

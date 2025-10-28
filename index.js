@@ -143,3 +143,47 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === popup) popup.style.display = 'none';
   });
 });
+
+$(document).ready(function() {
+  console.log("Autocomplete is ready!");
+  const cities = [
+    "Almaty, Tole bi 59",
+    "Almaty, Dostyk Ave 120",
+    "Astana, Mangilik El 55",
+    "Astana, Kabanbay Batyr Ave 10",
+    "Shymkent, Kunaev Ave 23",
+    "Karaganda, Abay St. 14",
+    "Aktobe, Auezov St. 8",
+    "Kostanay, Baymagambetov St. 77",
+    "Pavlodar, Nazarbayev Ave 44",
+    "Taraz, Tole bi St. 18"
+  ];
+  const $input = $("#autocompleteInput");
+  const $list = $("#suggestionsList");
+  $input.on("keyup", function() {
+    const value = $(this).val().toLowerCase();
+    $list.empty();
+    if (value.length > 0) {
+      const filtered = cities.filter(city => city.toLowerCase().includes(value));
+      if (filtered.length > 0) {
+        filtered.forEach(city => {
+          $list.append(`<li>${city}</li>`);
+        });
+        $list.addClass("show");
+      } else {
+        $list.removeClass("show");
+      }
+    } else {
+      $list.removeClass("show");
+    }
+  });
+
+  $list.on("click", "li", function() {
+    $input.val($(this).text());
+    $list.removeClass("show");
+  });
+
+  $input.on("blur", function() {
+    setTimeout(() => $list.removeClass("show"), 150);
+  });
+});
