@@ -187,3 +187,22 @@ $(document).ready(function() {
     setTimeout(() => $list.removeClass("show"), 150);
   });
 });
+
+$(document).ready(function() {
+  $('.counter').each(function() {
+    var $this = $(this),
+        countTo = parseInt($this.text().replace('+', ''));
+    $({ Counter: 0 }).animate({
+      Counter: countTo
+    }, {
+      duration: 3000,
+      easing: 'swing',
+      step: function(now) {
+        $this.text(Math.ceil(now));
+      },
+      complete: function() {
+        $this.text(countTo + '+');
+      }
+    });
+  });
+});
