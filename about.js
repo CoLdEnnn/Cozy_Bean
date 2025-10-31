@@ -1,8 +1,7 @@
 // ===========================
-// Accordion Functionality (jQuery, capture-phase to avoid conflicts)
+// Accordion Functionality 
 // ===========================
 $(function() {
-  // Start closed
   $('.accordion-content').hide();
 
   document.querySelectorAll('.accordion-btn').forEach((btn) => {
@@ -14,11 +13,9 @@ $(function() {
       const $btn = $(this);
       const $content = $btn.next('.accordion-content');
 
-      // Close others
       $('.accordion-content').not($content).stop(true, true).slideUp(200);
-      // Toggle current
       $content.stop(true, true).slideToggle(200);
-    }, true); // capture=true
+    }, true);
   });
 });
 
