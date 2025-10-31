@@ -21,7 +21,7 @@
   });
 
   // ===========================
-// Task 6: Loading Spinner on Submit (No CSS File Needed)
+// Task 6: Loading Spinner on Submit
 // ===========================
 
 const form = document.querySelector('#popupOverlay form');
@@ -43,7 +43,7 @@ if (form) {
     spinner.style.verticalAlign = 'middle';
     spinner.style.animation = 'spin 0.7s linear infinite';
 
-    // Добавляем анимацию вращения прямо в JS (через @keyframes)
+    // Добавляем анимацию вращения через @keyframes
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes spin {
@@ -72,7 +72,7 @@ if (form) {
       submitBtn.style.cursor = 'pointer';
       submitBtn.innerText = 'Send Message';
 
-      // Закрыть popup и сбросить форму
+      // close popup и сбросить форму
       document.getElementById('popupOverlay').style.display = 'none';
       alert('✅ Message sent successfully!');
       form.reset();
