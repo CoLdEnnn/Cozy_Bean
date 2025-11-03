@@ -14,28 +14,8 @@ function updateDateTime() {
   document.getElementById('date-time').textContent = now.toLocaleString('en-US', options);
 }
 
-// ===========================
-// Кнопка "Show Time"
-// ===========================
-const timeButton = document.getElementById('show-time-btn');
-const timeDisplay = document.getElementById('date-time');
-let timer = null;
-
-if (timeButton && timeDisplay) {
-  timeButton.addEventListener('click', () => {
-    if (timeDisplay.style.display === 'none') {
-      timeDisplay.style.display = 'block';
-      updateDateTime();
-      timer = setInterval(updateDateTime, 1000);
-      timeButton.textContent = 'Hide Time';
-    } else {
-
-      timeDisplay.style.display = 'none';
-      clearInterval(timer);
-      timeButton.textContent = 'Show Time';
-    }
-  });
-}
+setInterval(updateDateTime, 1000);
+updateDateTime();
 
 // ----------- Рейтинг ----------- //
 const ratings = document.querySelectorAll('.rating');
@@ -60,64 +40,6 @@ function highlightStars(stars, value) {
   stars.forEach((s, i) => {
     if (i < value) s.classList.add('selected');
     else s.classList.remove('selected');
-  });
-}
-
-// ----------- Read More ----------- //
-const aboutSection = document.querySelector('.About');
-if (aboutSection) {
-  const extraText = document.createElement('p');
-  extraText.textContent =
-    "Our Coffee sustainably sourced beans roasted to perfection for the best flavor experience.";
-  extraText.classList.add('hidden-text');
-  extraText.style.display = 'none';
-
-  const button = document.createElement('button');
-  button.textContent = 'Read more';
-  button.classList.add('readmore-btn');
-
-  const lastParagraph = aboutSection.querySelector('p:last-of-type');
-  lastParagraph.insertAdjacentElement('afterend', extraText);
-  extraText.insertAdjacentElement('afterend', button);
-
-  button.addEventListener('click', () => {
-    const isVisible = extraText.style.display === 'block';
-    extraText.style.display = isVisible ? 'none' : 'block';
-    button.textContent = isVisible ? 'Read more' : 'Show less';
-  });
-}
-
-// ===========================
-// Callback + Switch Statement
-// ===========================
-
-// Функция с использованием switch для выбора кофе по времени суток
-function getCoffeeSuggestion(hour) {
-  let suggestion = "";
-  switch (true) {
-    case hour < 12:
-      suggestion = "☀️ Good morning! Try our energizing Espresso to start your day!";
-      break;
-    case hour < 18:
-      suggestion = "🌤 Afternoon mood? A creamy Latte would be perfect for you!";
-      break;
-    default:
-      suggestion = "🌙 Evening vibes — relax with a cozy Cappuccino before bed.";
-  }
-  return suggestion;
-}
-
-// Функция callback — принимает другую функцию и выполняет её
-function showCoffee(callback) {
-  const result = callback(new Date().getHours());
-  document.getElementById("mood-result").textContent = result;
-}
-
-// Обработчик нажатия кнопки
-const moodBtn = document.getElementById("mood-btn");
-if (moodBtn) {
-  moodBtn.addEventListener("click", () => {
-    showCoffee(getCoffeeSuggestion);
   });
 }
 
@@ -185,24 +107,5 @@ $(document).ready(function() {
 
   $input.on("blur", function() {
     setTimeout(() => $list.removeClass("show"), 150);
-  });
-});
-
-$(document).ready(function() {
-  $('.counter').each(function() {
-    var $this = $(this),
-        countTo = parseInt($this.text().replace('+', ''));
-    $({ Counter: 0 }).animate({
-      Counter: countTo
-    }, {
-      duration: 3000,
-      easing: 'swing',
-      step: function(now) {
-        $this.text(Math.ceil(now));
-      },
-      complete: function() {
-        $this.text(countTo + '+');
-      }
-    });
   });
 });

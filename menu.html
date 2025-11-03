@@ -19,7 +19,7 @@
   </div>
 
   <body>
-     <div id="scrollProgressBar"></div>
+    <div id="scrollProgressBar"></div>
     <div class="layout">
       <!-- Шапка -->
       <header id="header">
@@ -85,7 +85,13 @@
               <p>Smooth coffee with plenty of milk and a light foam.</p>
               <span>$3.50</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="☕ Latte"
+                  data-price="3.50"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="☕ Latte"
@@ -95,13 +101,20 @@
                 </button>
               </div>
             </div>
+
             <div class="card">
               <img src="images/cappucino.png" alt="Cappuccino" />
               <h3>Cappuccino</h3>
               <p>Balanced mix of espresso, milk, and foam</p>
               <span>$3.00</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="☕ Cappucino"
+                  data-price="3.00"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="☕ Cappucino"
@@ -111,13 +124,20 @@
                 </button>
               </div>
             </div>
+
             <div class="card">
               <img src="images/mocha.png" alt="Mocha" />
               <h3>Mocha</h3>
               <p>Coffee with a hint of chocolate and a creamy touch.</p>
               <span>$3.80</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="☕ Mocha"
+                  data-price="3.80"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="☕ Mocha"
@@ -133,7 +153,13 @@
               <p>Chilled coffee served over ice</p>
               <span>$3.00</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="☕ Iced Coffee"
+                  data-price="3.00"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="☕ Iced Coffee"
@@ -153,7 +179,13 @@
               <p>Freshly baked buttery croissant</p>
               <span>$2.20</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="🥐 Croissant"
+                  data-price="2.20"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="🥐 Croissant"
@@ -169,7 +201,13 @@
               <p>Classic New York cheesecake slice</p>
               <span>$4.00</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="🍰 Cheesecake"
+                  data-price="4.00"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="🍰 Cheesecake"
@@ -185,7 +223,13 @@
               <p>Blueberry or chocolate chip muffin</p>
               <span>$2.50</span><br />
               <div class="card-buttons">
-                <button>Order now</button>
+                <button
+                  class="order-now"
+                  data-name="🧁 Muffin"
+                  data-price="2.50"
+                >
+                  Order now
+                </button>
                 <button
                   class="add-to-cart"
                   data-name="🧁 Muffin"
@@ -208,6 +252,5 @@
     </footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
- 
   <script src="script.js" defer></script>
 </html>
