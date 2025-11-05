@@ -1,135 +1,163 @@
 // ===========================
 // Keyboard Navigation for Sidebar
 // ===========================
-
 const sidebarLinks = document.querySelectorAll('#section-sidebar nav a');
-let currentIndex = 0;
+if (sidebarLinks.length > 0) {
+  let currentIndex = 0;
+  sidebarLinks[currentIndex].focus();
 
-sidebarLinks[currentIndex].focus();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-    e.preventDefault();
+      sidebarLinks[currentIndex].classList.remove('active');
 
-    sidebarLinks[currentIndex].classList.remove('active');
+      if (e.key === 'ArrowDown') {
+        currentIndex = (currentIndex + 1) % sidebarLinks.length;
+      } else if (e.key === 'ArrowUp') {
+        currentIndex = (currentIndex - 1 + sidebarLinks.length) % sidebarLinks.length;
+      }
 
-    if (e.key === 'ArrowDown') {
-      currentIndex = (currentIndex + 1) % sidebarLinks.length;
-    } else if (e.key === 'ArrowUp') {
-      currentIndex = (currentIndex - 1 + sidebarLinks.length) % sidebarLinks.length;
+      sidebarLinks[currentIndex].classList.add('active');
+      sidebarLinks[currentIndex].focus();
+
+      const targetId = sidebarLinks[currentIndex].getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
-
-    sidebarLinks[currentIndex].classList.add('active');
-
-    sidebarLinks[currentIndex].focus();
-
-    const targetId = sidebarLinks[currentIndex].getAttribute('href');
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-});
+  });
+}
 
 // ===========================
 // Sound Effects and Animations
 // ===========================
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
 function playNotificationSound() {
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
-    
-    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-    
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.1);
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+
+  gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+  oscillator.start(audioContext.currentTime);
+  oscillator.stop(audioContext.currentTime + 0.1);
 }
 
 function addClickSound(element) {
-    element.addEventListener('click', function(e) {
-        playNotificationSound();
-    });
+  element.addEventListener('click', function() {
+    playNotificationSound();
+  });
 }
 
 function addHoverAnimation(element) {
-    element.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
-        this.style.transition = 'transform 0.3s ease';
-    });
-    
-    element.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-    });
+  element.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.05)';
+    this.style.transition = 'transform 0.3s ease';
+  });
+
+  element.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1)';
+  });
 }
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-    addClickSound(button);
-    addHoverAnimation(button);
+document.querySelectorAll('button').forEach(btn => {
+  addClickSound(btn);
+  addHoverAnimation(btn);
 });
 
 const contactBtn = document.getElementById('openPopupBtn');
 if (contactBtn) {
-    contactBtn.addEventListener('click', function(e) {
-        playNotificationSound();
-    }, { capture: true });
+  contactBtn.addEventListener('click', () => playNotificationSound(), { capture: true });
 }
 
-const navLinks = document.querySelectorAll('.nav-links a');
-navLinks.forEach(link => {
-    addHoverAnimation(link);
-});
+document.querySelectorAll('.nav-links a').forEach(link => addHoverAnimation(link));
 
 const mainContent = document.querySelector('main');
 if (mainContent) {
-    mainContent.style.opacity = '0';
-    mainContent.style.transform = 'translateY(20px)';
-    mainContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    
-    setTimeout(() => {
-        mainContent.style.opacity = '1';
-        mainContent.style.transform = 'translateY(0)';
-    }, 100);
+  mainContent.style.opacity = '0';
+  mainContent.style.transform = 'translateY(20px)';
+  mainContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+  setTimeout(() => {
+    mainContent.style.opacity = '1';
+    mainContent.style.transform = 'translateY(0)';
+  }, 100);
 }
 
-const accordionBtns = document.querySelectorAll('.accordion-btn');
-accordionBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-        const content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            content.style.transform = 'scaleY(0)';
-        } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            content.style.transform = 'scaleY(1)';
-        }
-        content.style.transition = 'max-height 0.3s ease, transform 0.3s ease';
-        playNotificationSound();
-    });
+document.querySelectorAll('.accordion-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+      content.style.transform = 'scaleY(0)';
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.style.transform = 'scaleY(1)';
+    }
+    content.style.transition = 'max-height 0.3s ease, transform 0.3s ease';
+    playNotificationSound();
+  });
 });
 
 // ===========================
-// Day-Night Mode
+// Day-Night Mode (Task 6 — Madiyar)
+// ===========================
+// ===========================
+// Day-Night Mode (Task 6 — Madiyar)
 // ===========================
 (() => {
   const btn = document.getElementById('theme-toggle');
   if (!btn) return;
 
   const applyTheme = (theme) => {
-    document.body.classList.toggle('dark-mode', theme === 'dark');
+    const isDark = theme === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+
+    // Основные цвета для тела и текста
+    document.body.style.backgroundColor = isDark ? '#121212' : '#ffffff';
+    document.body.style.color = isDark ? '#f5f5f5' : '#222';
+
+    // Хедер
+    const header = document.getElementById('header');
+    if (header) {
+      header.style.backgroundColor = isDark ? '#1e1e1e' : '#f9f9f9';
+    }
+
+    // Боковая панель
+    const sidebar = document.getElementById('section-sidebar');
+    if (sidebar) {
+      sidebar.style.backgroundColor = isDark ? '#181818' : '#fff8dc';
+      sidebar.querySelectorAll('a').forEach(a => {
+        a.style.color = isDark ? '#f1c40f' : '#000';
+      });
+    }
+
+    // Контентные секции
+    document.querySelectorAll('main, section, .gallery-item, p, h2, h3, li').forEach(el => {
+      el.style.color = isDark ? '#f5f5f5' : '#222';
+      el.style.backgroundColor = isDark ? 'transparent' : '';
+    });
+
+    // Ссылки навигации сверху
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.style.color = isDark ? '#f1c40f' : '#000';
+    });
   };
 
-  // Восстановить из localStorage
+  // Загружаем сохранённую тему
   const savedTheme = localStorage.getItem('theme') || 'light';
   applyTheme(savedTheme);
 
+  // Смена темы по клику
   btn.addEventListener('click', () => {
     const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -138,97 +166,108 @@ accordionBtns.forEach(btn => {
   });
 })();
 
+
+// ===========================
+// Scroll Progress Bar
+// ===========================
 $(document).ready(function() {
-    // Task 4: Scroll Progress Bar
-    $(window).scroll(function() {
-        var scrollTop = $(window).scrollTop();
-        var docHeight = $(document).height();
-        var winHeight = $(window).height();
-        var scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-        $('#scrollProgressBar').css('width', scrollPercent + '%');
-    });
+  $(window).scroll(function() {
+    var scrollTop = $(window).scrollTop();
+    var docHeight = $(document).height();
+    var winHeight = $(window).height();
+    var scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+    $('#scrollProgressBar').css('width', scrollPercent + '%');
+  });
 });
 
+// ===========================
+// Cart System (with safety checks)
+// ===========================
 const orderBag = document.querySelector('.orderbag');
 const cart = document.getElementById('cart');
 const overlay = document.getElementById('overlay');
 const closeCart = document.getElementById('close-cart');
 const cartItems = document.getElementById('cart-items');
 const totalPrice = document.getElementById('total-price');
+const cartTotal = document.getElementById('cart-total');
 
-let payButton = document.createElement('button');
-payButton.id = 'pay-btn';
-payButton.textContent = 'Pay Now';
-document.getElementById('cart-total').appendChild(payButton);
+if (cart && overlay && closeCart && cartItems && totalPrice && cartTotal) {
+  let payButton = document.createElement('button');
+  payButton.id = 'pay-btn';
+  payButton.textContent = 'Pay Now';
+  cartTotal.appendChild(payButton);
 
-orderBag.addEventListener('click', toggleCart);
-closeCart.addEventListener('click', toggleCart);
-overlay.addEventListener('click', toggleCart);
+  if (orderBag && closeCart && overlay) {
+    orderBag.addEventListener('click', toggleCart);
+    closeCart.addEventListener('click', toggleCart);
+    overlay.addEventListener('click', toggleCart);
+  }
 
-function toggleCart() {
-  cart.classList.toggle('active');
-  overlay.classList.toggle('active');
-}
+  function toggleCart() {
+    cart.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
 
-let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
-updateCart();
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+  updateCart();
 
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.getAttribute('data-name');
+      const price = parseFloat(button.getAttribute('data-price'));
 
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const name = button.getAttribute('data-name');
-    const price = parseFloat(button.getAttribute('data-price'));
+      const existingItem = cartData.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cartData.push({ name, price, quantity: 1 });
+      }
 
-    const existingItem = cartData.find(item => item.name === name);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cartData.push({ name, price, quantity: 1 });
-    }
+      saveCart();
+      updateCart();
+      showToast(`${name} added to cart 🛒`);
+    });
+  });
 
+  function updateCart() {
+    cartItems.innerHTML = '';
+    let total = 0;
+    cartData.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        ${item.name} — $${item.price} × ${item.quantity}
+        <button class="remove-item">✖</button>
+      `;
+      li.querySelector('.remove-item').addEventListener('click', () => removeItem(item.name));
+      cartItems.appendChild(li);
+      total += item.price * item.quantity;
+    });
+    totalPrice.textContent = `$${total.toFixed(2)}`;
+  }
+
+  function removeItem(name) {
+    cartData = cartData.filter(item => item.name !== name);
     saveCart();
     updateCart();
-    showToast(`${name} added to cart 🛒`);
-  });
-});
-
-function updateCart() {
-  cartItems.innerHTML = '';
-
-  let total = 0;
-  cartData.forEach(item => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-      ${item.name} — $${item.price} × ${item.quantity}
-      <button class="remove-item">✖</button>
-    `;
-    li.querySelector('.remove-item').addEventListener('click', () => removeItem(item.name));
-    cartItems.appendChild(li);
-    total += item.price * item.quantity;
-  });
-
-  totalPrice.textContent = `$${total.toFixed(2)}`;
-}
-
-function removeItem(name) {
-  cartData = cartData.filter(item => item.name !== name);
-  saveCart();
-  updateCart();
-}
-
-function saveCart() {
-  localStorage.setItem('cartData', JSON.stringify(cartData));
-}
-
-payButton.addEventListener('click', () => {
-  if (cartData.length === 0) {
-    showToast("Your cart is empty!");
-    return;
   }
-  window.location.href = 'pay.html';
-});
 
+  function saveCart() {
+    localStorage.setItem('cartData', JSON.stringify(cartData));
+  }
+
+  payButton.addEventListener('click', () => {
+    if (cartData.length === 0) {
+      showToast("Your cart is empty!");
+      return;
+    }
+    window.location.href = 'pay.html';
+  });
+}
+
+// ===========================
+// Toast Notifications
+// ===========================
 function showToast(message) {
   const toast = document.createElement('div');
   toast.classList.add('toast');
@@ -247,24 +286,3 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
-
-const orderNowButtons = document.querySelectorAll('.order-now');
-
-orderNowButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const name = button.getAttribute('data-name');
-    const price = parseFloat(button.getAttribute('data-price'));
-
-    let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
-
-    const existingItem = cartData.find(item => item.name === name);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cartData.push({ name, price, quantity: 1 });
-    }
-
-    localStorage.setItem('cartData', JSON.stringify(cartData));
-    window.location.href = 'pay.html';
-  });
-});
