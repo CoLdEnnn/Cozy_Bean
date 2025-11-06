@@ -65,3 +65,4 @@ function copyName(buttonElement) {
     console.error('Ошибка при копировании:', err);
   });
 }
+
