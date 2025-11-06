@@ -12,7 +12,7 @@
     <!-- Шапка -->
     <header id="header">
       <a href="index.html"
-        ><img src="images/logo.png" alt="Logo" id="logo"
+        ><img src="images/logo.png" alt="Cozy Bean Logo" id="logo"
       /></a>
       <nav>
         <div class="nav-links">
@@ -31,8 +31,9 @@
       <section>
         <img
           src="images/coffee-hero.png"
-          alt="Cozy coffee setup"
+          alt="Cozy coffee setup with cups and beans"
           id="mainphoto"
+          loading="lazy"
         />
 
         <h2>Welcome Back</h2>
@@ -40,11 +41,11 @@
 
         <form action="#" method="post" class="auth-form">
           <div class="input-group">
-            <input type="text" name="username" />
+            <input type="text" name="username" aria-required="true" />
             <label for="username">Username</label>
           </div>
           <div class="input-group">
-            <input type="password" name="password" />
+            <input type="password" name="password" aria-required="true" />
             <label for="password">Password</label>
           </div>
 
@@ -58,8 +59,9 @@
         <div class="password-reset">
           <img
             src="images/forgot-password.png"
-            alt="Forgot password"
+            alt="Forgot password illustration"
             class="password-img"
+            loading="lazy"
           />
           <p>Click here to reset your password and get back to your coffee.</p>
           <a href="reset.html"><button type="button">Reset</button></a>

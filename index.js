@@ -26,12 +26,14 @@ ratings.forEach(rating => {
   const savedRating = localStorage.getItem(`rating_${itemName}`) || 0;
 
   if (savedRating > 0) highlightStars(stars, savedRating);
+  rating.setAttribute('aria-valuenow', savedRating); // Обновляем ARIA
 
   stars.forEach(star => {
     star.addEventListener('click', () => {
       const value = parseInt(star.dataset.value);
       highlightStars(stars, value);
       localStorage.setItem(`rating_${itemName}`, value);
+      rating.setAttribute('aria-valuenow', value); // Обновляем ARIA
     });
   });
 });

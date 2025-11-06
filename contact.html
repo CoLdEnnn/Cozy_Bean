@@ -10,11 +10,12 @@
   <div id="scrollProgressBar"></div>
 
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div class="layout">
       <!-- Шапка -->
       <header id="header">
         <a href="index.html"
-          ><img src="images/logo.png" alt="Logo" id="logo"
+          ><img src="images/logo.png" alt="Cozy Bean Logo" id="logo"
         /></a>
         <nav class="nav-bar">
           <div class="nav-links">
@@ -27,7 +28,7 @@
           </div>
         </nav>
         <a href="login.html" class="loginbtn"
-          ><img src="images/user.png" alt="login" class="login"
+          ><img src="images/user.png" alt="Login icon" class="login"
         /></a>
          <button id="theme-toggle" class="theme-btn">☀️ / 🌙</button>
       </header>
@@ -53,28 +54,28 @@
 
           <!-- Кнопка -->
           <button id="openPopupBtn">Contact Us</button>
-          <div class="popup-overlay" id="popupOverlay">
+          <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
             <div class="popup-content">
-              <button class="close-popup" id="closePopupBtn">&times;</button>
-              <h4>Contact Form</h4>
+              <button class="close-popup" id="closePopupBtn" aria-label="Close dialog">&times;</button>
+              <h4 id="popup-title">Contact Form</h4>
               <form>
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Your Name"
-                  required
+                  required aria-required="true"
                 />
                 <input
                   type="email"
                   class="form-control"
                   placeholder="Your Email"
-                  required
+                  required aria-required="true"
                 />
                 <textarea
                   class="form-control"
                   rows="3"
                   placeholder="Your Message"
-                  required
+                  required aria-required="true"
                 ></textarea>
                 <button type="submit">Send Message</button>
               </form>

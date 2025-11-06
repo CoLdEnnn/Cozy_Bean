@@ -1,4 +1,3 @@
-
 // ===========================
 // Form Validation (Login Page)
 // ===========================
@@ -16,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const div = document.createElement("div");
     div.className = "error-msg";
     div.textContent = message;
+    div.setAttribute('aria-live', 'polite'); // ARIA для объявления ошибок
     div.style.color = "red";
     div.style.fontSize = "0.9rem";
     div.style.marginTop = "4px";
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const div = document.createElement("div");
     div.className = "error-msg";
     div.textContent = message;
+    div.setAttribute('aria-live', 'polite');
     div.style.color = "red";
     div.style.fontSize = "0.9rem";
     div.style.marginTop = "4px";
