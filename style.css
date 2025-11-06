@@ -724,9 +724,6 @@ h2, h4 {
   .accordion-item p{
     font-size: 20px;
   }
-  .add-to-cart {
-    font-size: 14px;
-  }
 }
 
 @media (min-width: 992px) { /* Desktop */
@@ -739,18 +736,11 @@ h2, h4 {
   p, a {font-size: 1.2rem;}
   #logo {width: 200px; height: 80px;}
   .card{flex: 1 1 calc(30% - 20px);}
-  /* Responsice Gallery Fix */
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
   .accordion-section h2 {
     font-size: 27px;
   }
   .accordion-item p{
     font-size: 22px;
-  }
-  .cards-coffee, .cards-desserts button {
-    font-size: 14px;
   }
 }
 
