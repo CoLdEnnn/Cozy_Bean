@@ -650,14 +650,6 @@ h2, h4 {
   .datetime p {
     font-size: 0.5rem;
   }
-  /* Responsice Gallery Fix */
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-  }
   .accordion-section h2 {
     font-size: 18px;
   }
@@ -681,15 +673,6 @@ h2, h4 {
   .datetime p {
     font-size: 0.7rem;
   }
-  /* Responsice Gallery Fix */
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-  }
-  /* --- Responsive Sidebar and Layout --- */
   #section-sidebar nav a {
     display: inline-block;
     margin: 5px;
@@ -708,10 +691,6 @@ h2, h4 {
   h2 {font-size: 1.8rem}
   h3 {font-size: 1.2rem;}
   p, a {font-size: 0.9rem;}
-  /* Responsice Gallery Fix */
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .datetime h2 {
     font-size: 1.3rem;
   }
