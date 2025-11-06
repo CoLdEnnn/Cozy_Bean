@@ -12,9 +12,12 @@ $(function() {
 
       const $btn = $(this);
       const $content = $btn.next('.accordion-content');
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
 
       $('.accordion-content').not($content).stop(true, true).slideUp(200);
       $content.stop(true, true).slideToggle(200);
+
+      $btn.attr('aria-expanded', !isExpanded); // Обновляем ARIA
     }, true);
   });
 });
@@ -30,7 +33,7 @@ function copyName(buttonElement) {
   // Проверка на наличие tooltip (если нет — создаём один общий)
   let $tooltip = $('#global-tooltip');
   if ($tooltip.length === 0) {
-    $tooltip = $('<div id="global-tooltip" />').css({
+    $tooltip = $('<div id="global-tooltip" aria-live="polite" />').css({ // ARIA для доступности
       position: 'absolute',
       background: '#222',
       color: '#fff',

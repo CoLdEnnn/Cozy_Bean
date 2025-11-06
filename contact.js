@@ -10,6 +10,7 @@
 
   openBtn.addEventListener('click', () => {
     popup.style.display = 'flex';
+    popup.focus(); // Фокус на модалке для доступности
   });
 
   closeBtn.addEventListener('click', () => {
@@ -33,6 +34,8 @@ if (form) {
 
     // Создаем сам спиннер
     const spinner = document.createElement('span');
+    spinner.setAttribute('aria-live', 'assertive'); // ARIA для объявления
+    spinner.textContent = 'Loading...'; // Для экранных читалок
     spinner.style.width = '16px';
     spinner.style.height = '16px';
     spinner.style.border = '2px solid #f2e3d5';
@@ -79,4 +82,3 @@ if (form) {
     }, 2000);
   });
 }
-

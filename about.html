@@ -9,11 +9,12 @@
 
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a> <!-- Skip-link для доступности -->
     <div id="scrollProgressBar"></div>
     <!-- Шапка -->
     <header id="header">
       <a href="index.html"
-        ><img src="images/logo.png" alt="Logo" id="logo"
+        ><img src="images/logo.png" alt="Cozy Bean Logo" id="logo"
       /></a>
       <nav class="nav-bar">
         <div class="nav-links">
@@ -26,7 +27,7 @@
         </div>
       </nav>
       <a href="login.html"
-        ><img src="images/user.png" alt="login" class="login"
+        ><img src="images/user.png" alt="Login icon" class="login"
       /></a>
       <button id="theme-toggle" class="theme-btn">☀️ / 🌙</button>
   
@@ -50,10 +51,10 @@
           <div class="accordion-section">
             <h2>FAQ</h2>
             <div class="accordion-item">
-              <button class="accordion-btn">
+              <button class="accordion-btn" role="button" aria-expanded="false" aria-controls="accordion-content1">
                 How many establishments do we have in Kazakhstan?
               </button>
-              <div class="accordion-content">
+              <div class="accordion-content" id="accordion-content1">
                 <p class="copy-text">
                   We have a total of four establishments in Kazakhstan — located
                   in Astana, Almaty, Atyrau, and Taraz.
@@ -62,10 +63,10 @@
             </div>
 
             <div class="accordion-item">
-              <button class="accordion-btn">
+              <button class="accordion-btn" role="button" aria-expanded="false" aria-controls="accordion-content2">
                 Do we offer delivery services?
               </button>
-              <div class="accordion-content">
+              <div class="accordion-content" id="accordion-content2">
                 <p>
                   Yes! Cozy Bean provides delivery through popular services like
                   Wolt, Glovo, and Yandex Go, depending on your city.
@@ -74,10 +75,10 @@
             </div>
 
             <div class="accordion-item">
-              <button class="accordion-btn">
+              <button class="accordion-btn" role="button" aria-expanded="false" aria-controls="accordion-content3">
                 Do we have a loyalty or bonus program?
               </button>
-              <div class="accordion-content">
+              <div class="accordion-content" id="accordion-content3">
                 <p>
                   We are planning to launch a bonus program soon. Stay tuned!
                 </p>
@@ -104,7 +105,7 @@
 
           <div id="our-team">
             <article>
-              <img src="images/barista.png" alt="barista" class="barista" />
+              <img src="images/barista.png" alt="Our friendly barista team" class="barista" loading="lazy" />
               <h3>Our Team</h3>
               <p>
                 Friendly, passionate, and trained baristas who put love into
@@ -114,8 +115,9 @@
             <article id="our-coffee">
               <img
                 src="images/coffee-beans.jpg"
-                alt="coffee beans"
+                alt="Sustainably sourced coffee beans"
                 class="coffee-beans"
+                loading="lazy"
               />
               <h3>Our Coffee</h3>
               <p>
@@ -163,4 +165,3 @@
     <script src="theme.js" defer></script>
   </body>
 </html>
-  

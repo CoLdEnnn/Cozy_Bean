@@ -110,10 +110,7 @@ document.querySelectorAll('.accordion-btn').forEach(btn => {
 
 // ===========================
 // Day-Night Mode (Task 6 — Madiyar)
-// ===========================
-// ===========================
-// Day-Night Mode (Task 6 — Madiyar)
-// ===========================
+// ==========================
 (() => {
   const btn = document.getElementById('theme-toggle');
   if (!btn) return;
@@ -237,7 +234,7 @@ if (cart && overlay && closeCart && cartItems && totalPrice && cartTotal) {
       const li = document.createElement('li');
       li.innerHTML = `
         ${item.name} — $${item.price} × ${item.quantity}
-        <button class="remove-item">✖</button>
+        <button class="remove-item" aria-label="Remove item">✖</button>
       `;
       li.querySelector('.remove-item').addEventListener('click', () => removeItem(item.name));
       cartItems.appendChild(li);
@@ -272,6 +269,7 @@ function showToast(message) {
   const toast = document.createElement('div');
   toast.classList.add('toast');
   toast.textContent = message;
+  toast.setAttribute('aria-live', 'assertive'); // ARIA для тостов
   document.body.appendChild(toast);
 
   setTimeout(() => toast.classList.add('show'), 100);

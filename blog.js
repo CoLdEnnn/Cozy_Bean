@@ -3,7 +3,7 @@
 // ============================
 $(document).ready(function () {
   // создаём поле поиска сверху страницы
-  const searchInput = $('<input type="text" id="search" placeholder="Search in blog...">')
+  const searchInput = $('<input type="text" id="search" placeholder="Search in blog..." aria-label="Search in blog">') // ARIA label
     .css({
       padding: "10px",
       width: "60%",
