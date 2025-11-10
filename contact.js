@@ -2,15 +2,16 @@
 // Popup Subscription Form
 // ===========================
 
+document.addEventListener('DOMContentLoaded', () => {
   const openBtn = document.getElementById('openPopupBtn');
   const closeBtn = document.getElementById('closePopupBtn');
   const popup = document.getElementById('popupOverlay');
 
-  if (!openBtn || !closeBtn || !popup) return; // если элементов нет — не выполняем
+  if (!openBtn || !closeBtn || !popup) return;
 
   openBtn.addEventListener('click', () => {
     popup.style.display = 'flex';
-    popup.focus(); // Фокус на модалке для доступности
+    popup.focus();
   });
 
   closeBtn.addEventListener('click', () => {
@@ -20,9 +21,10 @@
   popup.addEventListener('click', (e) => {
     if (e.target === popup) popup.style.display = 'none';
   });
+});
 
-  // ===========================
-// Task 6: Loading Spinner on Submit
+// ===========================
+// Loading Spinner on Submit
 // ===========================
 
 const form = document.querySelector('#popupOverlay form');

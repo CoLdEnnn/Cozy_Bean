@@ -1,37 +1,5 @@
 // ===========================
-// Keyboard Navigation for Sidebar
-// ===========================
-const sidebarLinks = document.querySelectorAll('#section-sidebar nav a');
-if (sidebarLinks.length > 0) {
-  let currentIndex = 0;
-  sidebarLinks[currentIndex].focus();
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      e.preventDefault();
-
-      sidebarLinks[currentIndex].classList.remove('active');
-
-      if (e.key === 'ArrowDown') {
-        currentIndex = (currentIndex + 1) % sidebarLinks.length;
-      } else if (e.key === 'ArrowUp') {
-        currentIndex = (currentIndex - 1 + sidebarLinks.length) % sidebarLinks.length;
-      }
-
-      sidebarLinks[currentIndex].classList.add('active');
-      sidebarLinks[currentIndex].focus();
-
-      const targetId = sidebarLinks[currentIndex].getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  });
-}
-
-// ===========================
-// Day-Night Mode (Task 6 — Madiyar)
+// Day-Night Mode
 // ==========================
 (() => {
   const btn = document.getElementById('theme-toggle');

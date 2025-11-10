@@ -10,7 +10,6 @@
   <div id="scrollProgressBar"></div>
 
   <body>
-   
     <div class="layout">
       <!-- Шапка -->
       <header id="header">
@@ -30,7 +29,7 @@
         <a href="login.html" class="loginbtn"
           ><img src="images/user.png" alt="Login icon" class="login"
         /></a>
-         <button id="theme-toggle" class="theme-btn">☀️ / 🌙</button>
+        <button id="theme-toggle" class="theme-btn">☀️ / 🌙</button>
       </header>
 
       <!-- Сайдбар -->
@@ -49,33 +48,48 @@
             pastries, and warm vibes.
           </p>
 
-          <h4>Opening hours</h4>
+          <h3>Opening hours</h3>
           <p>Mon–Fri: 08:00–20:00 | Sat–Sun: 09:00–18:00</p>
 
           <!-- Кнопка -->
           <button id="openPopupBtn">Contact Us</button>
-          <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+          <div
+            class="popup-overlay"
+            id="popupOverlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="popup-title"
+          >
             <div class="popup-content">
-              <button class="close-popup" id="closePopupBtn" aria-label="Close dialog">&times;</button>
+              <button
+                class="close-popup"
+                id="closePopupBtn"
+                aria-label="Close dialog"
+              >
+                &times;
+              </button>
               <h4 id="popup-title">Contact Form</h4>
               <form>
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Your Name"
-                  required aria-required="true"
+                  required
+                  aria-required="true"
                 />
                 <input
                   type="email"
                   class="form-control"
                   placeholder="Your Email"
-                  required aria-required="true"
+                  required
+                  aria-required="true"
                 />
                 <textarea
                   class="form-control"
                   rows="3"
                   placeholder="Your Message"
-                  required aria-required="true"
+                  required
+                  aria-required="true"
                 ></textarea>
                 <button type="submit">Send Message</button>
               </form>
@@ -94,6 +108,5 @@
     <script src="script.js" defer></script>
     <script src="contact.js" defer></script>
     <script src="theme.js" defer></script>
-
   </body>
 </html>

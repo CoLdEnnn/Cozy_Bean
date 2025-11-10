@@ -300,13 +300,15 @@ li {
     display: flex;
     justify-content: center;
     gap: 10px;
+    padding: 5px;
 }
 .card button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     width: 70px;
     height: 60px;
     margin-bottom: 10px;
+    padding: 5px;
     color: black;
     background: none;
     transition: background 0.7s;
@@ -321,6 +323,7 @@ li {
 .card:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
 
 .layout {
     display: grid;
@@ -723,10 +726,10 @@ h2, h4 {
     font-size: 0.5rem;
   }
   .accordion-section h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
   .accordion-item p{
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -753,7 +756,7 @@ h2, h4 {
     font-size: 22px;
   }
   .accordion-item p{
-    font-size: 18px;
+    font-size: 13px;
   }
 }
 
@@ -773,7 +776,7 @@ h2, h4 {
     font-size: 25px;
   }
   .accordion-item p{
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -791,7 +794,7 @@ h2, h4 {
     font-size: 27px;
   }
   .accordion-item p{
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -860,55 +863,49 @@ body.dark-mode section {
 }
 
 .dropdown {
-      position: relative;
-      width: 320px;
-      margin: 30px auto;
-    }
-
-    .dropdown input {
-      width: 100%;
-      padding: 10px 14px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    .dropdown input:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-    }
-
-    .dropdown ul {
-      position: absolute;
-      width: 100%;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-top: 4px;
-      padding: 0;
-      list-style: none;
-      max-height: 200px;
-      overflow-y: auto;
-      display: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      z-index: 100;
-    }
-
-    .dropdown ul li {
-      padding: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .dropdown ul li:hover {
-      background: #f2f2f2;
-    }
-
-    .dropdown ul.show {
-      display: block;
-    }
+  position: relative;
+  width: 320px;
+  margin: 30px auto;
+}
+.dropdown input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+.dropdown input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+.dropdown ul {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 4px;
+  padding: 0;
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+.dropdown ul li {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dropdown ul li:hover {
+  background: #f2f2f2;
+}
+.dropdown ul.show {
+  display: block;
+}
 
 #contact-main {
   background: #a98501;
@@ -1143,7 +1140,6 @@ body.dark-mode section {
   background-color: #7c6513;
 }
 
-/* 🌙 Dark Mode (улучшен контраст) */
 body.dark-mode {
   background-color: #121212;
   color: #f5f5f5;
@@ -1164,12 +1160,12 @@ body.dark-mode footer {
 }
 
 body.dark-mode a {
-  color: #ffd700; /* Золотой для лучшего контраста в темной теме */
+  color: #ffd700; 
 }
 
 body.dark-mode button {
   background-color: #cea100;
-  color: #000; /* Черный текст для контраста */
+  color: #000; 
 }
 
 .theme-btn {
@@ -1187,7 +1183,6 @@ body.dark-mode .theme-btn {
   color: #fff;
 }
 
-/* 🌙 Dark Mode Fix */
 body.dark-mode {
   background-color: #121212;
   color: #f1f1f1;
@@ -1216,15 +1211,15 @@ body.dark-mode section {
 }
 
 body.dark-mode .highlight {
-  background-color: #ffd700; /* Желтый для контраста в темной теме */
+  background-color: #ffd700;
   color: #000;
 }
 
-/* 🌙 Dark Mode for Auth Form */
 body.dark-mode .auth-form {
   background: #1e1e1e !important;
   color: #f5f5f5 !important;
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1) !important;
+  width: 430px !important;
 }
 
 body.dark-mode .auth-form label {
@@ -1235,16 +1230,18 @@ body.dark-mode .auth-form input {
   background-color: #333 !important;
   color: #f5f5f5 !important;
   border-color: #555 !important;
+  padding: 25px !important;
+  width: 350px !important;
 }
 
 body.dark-mode .auth-form input:focus {
-  border-color: #ffd700 !important; /* Золотой для акцента */
+  border-color: #ffd700 !important; 
   background-color: #444 !important;
   box-shadow: 0 0 5px rgba(255, 215, 0, 0.4) !important;
 }
 
 body.dark-mode .auth-form button {
-  background-color: #ffd700 !important; /* Золотой для кнопок */
+  background-color: #ffd700 !important; 
   color: #000 !important;
 }
 
@@ -1252,7 +1249,6 @@ body.dark-mode .auth-form button:hover {
   background-color: #e6c200 !important;
 }
 
-/* 🌙 Dark Mode for Password Reset */
 body.dark-mode .password-reset {
   color: #f5f5f5 !important;
 }
@@ -1267,12 +1263,13 @@ body.dark-mode .password-reset button {
 }
 
 body.dark-mode .input-group label {
-  color: #ccc !important;
-  background-color: #1e1e1e !important; /* Для плавающих лейблов */
+  color: #333 !important;
+  transform: translate(15px, -25px) !important;
 }
 
 body.dark-mode .input-group input:focus + label,
 body.dark-mode .input-group input:valid + label {
   color: #ffd700 !important;
-  background-color: #1e1e1e !important;
+  background-color: #333 !important;
+  transform: translate(15px, -35px) !important;
 }
