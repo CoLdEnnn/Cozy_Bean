@@ -110,11 +110,11 @@ a:hover {
 .input-group {
     position: relative;
     margin-bottom: 30px; 
-    width: 100%;
+    width: 350px;
 }
 
 .input-group input {
-    width: 100%;
+    width: 430px;
     padding: 10px;
     min-height: 40px; 
     border: 1px solid #ccc;
@@ -243,10 +243,10 @@ li {
 }
 
 .login {
-    width: 45px;
-    height: 45px;
-    top: 10px;
-    right: 15px;
+    width: 43px;
+    height: 43px;
+    top: 5px;
+    right: 10px;
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.7s;
@@ -477,7 +477,7 @@ main section:target {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 40px 30px;
-  width: 320px;
+  width: 430px;
   margin: 60px auto;
   font-family: 'Poppins', sans-serif;
   color: #333;
@@ -485,7 +485,6 @@ main section:target {
 
 .auth-form input {
   width: 100%;
-  padding: 12px 15px;
   margin: 12px 0 22px;
   border: 1.5px solid #ccc;
   border-radius: 10px;
@@ -504,6 +503,11 @@ main section:target {
 .auth-form label {
   font-size: 0.95rem;
   color: #555;
+  transform: translate(0px, -17px)
+}
+
+.auth-form input:focus + label, .auth-form input:valid + label {
+  transform: translate(5px, -35px)
 }
 
 .auth-form button {
