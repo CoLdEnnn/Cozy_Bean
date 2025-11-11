@@ -15,6 +15,22 @@
     const userIcon = document.querySelector('.login');
     const bagIcon = document.querySelector('.orderbag');
 
+    const updateButtonIcon = (isDark) => {
+      const btn = document.getElementById('theme-toggle');
+      if (btn) {
+        // Add fade effect
+        btn.style.opacity = '0.5';
+        setTimeout(() => {
+          // Show sun icon in dark mode (click to switch to light)
+          // Show moon icon in light mode (click to switch to dark)
+          btn.textContent = isDark ? '☀️' : '🌙';
+          btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          btn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          btn.style.opacity = '1';
+        }, 150);
+      }
+    };
+
     const applyTheme = (theme) => {
       const isDark = theme === 'dark';
       
@@ -24,6 +40,9 @@
       } else {
         document.body.classList.remove('dark-mode');
       }
+
+      // Update button icon based on current theme
+      updateButtonIcon(isDark);
 
       // Swap images (only elements that exist)
       if (logo) {
@@ -44,18 +63,15 @@
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 
-    // Remove any existing event listeners by cloning the button
-    const newBtn = btn.cloneNode(true);
-    btn.parentNode.replaceChild(newBtn, btn);
-
     // Toggle theme on button click
-    newBtn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       
       const currentHasDark = document.body.classList.contains('dark-mode');
       const newTheme = currentHasDark ? 'light' : 'dark';
       applyTheme(newTheme);
+      // Button icon will be updated by applyTheme function
     });
 
     // Add smooth transitions for icons

@@ -801,9 +801,15 @@ h2, h4 {
   }
   
   .theme-btn {
-    font-size: 0.75rem;
-    padding: 4px 8px;
+    font-size: 1rem;
+    padding: 6px 10px;
     margin: 5px;
+    min-width: 35px;
+    min-height: 35px;
+  }
+  
+  .theme-btn:hover {
+    transform: scale(1.05) rotate(10deg);
   }
   
   
@@ -1247,17 +1253,44 @@ body.dark-mode footer {
 
 .theme-btn {
   margin-left: 10px;
-  background: #ffcc00;
-  color: black;
-  border: none;
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease, opacity 0.2s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  opacity: 1;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: #e8e8e8;
+  border-color: #bbb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.theme-btn:active {
+  transform: scale(0.95);
 }
 
 body.dark-mode .theme-btn {
-  background: #444;
-  color: #fff;
+  background: #2a2a2a;
+  color: #ffb3d9;
+  border: 1px solid #444;
+}
+
+body.dark-mode .theme-btn:hover {
+  background: #333;
+  border-color: #ffb3d9;
+  color: #ffc0e6;
+  box-shadow: 0 4px 8px rgba(255, 179, 217, 0.2);
 }
 
 body.dark-mode {
@@ -1643,17 +1676,44 @@ body.dark-mode button {
 
 .theme-btn {
   margin-left: 10px;
-  background: #ffcc00;
-  color: black;
-  border: none;
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease, opacity 0.2s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  opacity: 1;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: #e8e8e8;
+  border-color: #bbb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.theme-btn:active {
+  transform: scale(0.95);
 }
 
 body.dark-mode .theme-btn {
-  background: #444;
-  color: #fff;
+  background: #2a2a2a;
+  color: #ffb3d9;
+  border: 1px solid #444;
+}
+
+body.dark-mode .theme-btn:hover {
+  background: #333;
+  border-color: #ffb3d9;
+  color: #ffc0e6;
+  box-shadow: 0 4px 8px rgba(255, 179, 217, 0.2);
 }
 
 body.dark-mode {
