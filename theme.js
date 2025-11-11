@@ -1,62 +1,76 @@
-
 // ===========================
 // Unified Day/Night Mode (with Image Swap)
-// ===========================
-(() => {
-  const btn = document.getElementById('theme-toggle');
-  if (!btn) return;
-
-  const logo = document.getElementById('logo');
-  const userIcon = document.querySelector('.login');
-  const bagIcon = document.querySelector('.orderbag');
-
-  const applyTheme = (theme) => {
-    const isDark = theme === 'dark';
-    document.body.classList.toggle('dark-mode', isDark);
-
-    // Цвета и фон
-    document.body.style.backgroundColor = isDark ? '#121212' : '#ffffff';
-    document.body.style.color = isDark ? '#f5f5f5' : '#222';
-
-    const header = document.getElementById('header');
-    if (header) header.style.backgroundColor = isDark ? '#1e1e1e' : '#f9f9f9';
-
-    const sidebar = document.getElementById('section-sidebar');
-    if (sidebar) {
-      sidebar.style.backgroundColor = isDark ? '#181818' : '#fff8dc';
-      sidebar.querySelectorAll('a').forEach(a => {
-        a.style.color = isDark ? '#f1c40f' : '#000';
-      });
+// ==========================
+(function() {
+  'use strict';
+  
+  function initTheme() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) {
+      console.warn('Theme toggle button not found');
+      return;
     }
 
-    document.querySelectorAll('main, section, .gallery-item, p, h2, h3, li').forEach(el => {
-      el.style.color = isDark ? '#f5f5f5' : '#222';
-      el.style.backgroundColor = isDark ? 'transparent' : '';
+    const logo = document.getElementById('logo');
+    const userIcon = document.querySelector('.login');
+    const bagIcon = document.querySelector('.orderbag');
+
+    const applyTheme = (theme) => {
+      const isDark = theme === 'dark';
+      
+      // Toggle dark-mode class on body - CSS will handle most styling
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+
+      // Swap images (only elements that exist)
+      if (logo) {
+        logo.src = isDark ? 'images/logo-white.png' : 'images/logo.png';
+      }
+      if (userIcon) {
+        userIcon.src = isDark ? 'images/user-white.png' : 'images/user.png';
+      }
+      if (bagIcon) {
+        bagIcon.src = isDark ? 'images/bag-white.png' : 'images/bag.png';
+      }
+      
+      // Save to localStorage
+      localStorage.setItem('theme', theme);
+    };
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme);
+
+    // Remove any existing event listeners by cloning the button
+    const newBtn = btn.cloneNode(true);
+    btn.parentNode.replaceChild(newBtn, btn);
+
+    // Toggle theme on button click
+    newBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const currentHasDark = document.body.classList.contains('dark-mode');
+      const newTheme = currentHasDark ? 'light' : 'dark';
+      applyTheme(newTheme);
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.style.color = isDark ? '#f1c40f' : '#000';
+    // Add smooth transitions for icons
+    [logo, userIcon, bagIcon].forEach(icon => {
+      if (icon) {
+        icon.style.transition = 'opacity 0.3s ease';
+      }
     });
+  }
 
-    // Смена изображений
-    if (logo) logo.src = isDark ? 'images/logo-white.png' : 'images/logo.png';
-    if (userIcon) userIcon.src = isDark ? 'images/user-white.png' : 'images/user.png';
-    if (bagIcon) bagIcon.src = isDark ? 'images/bag-white.png' : 'images/bag.png';
-  };
-
-  // Загрузка сохранённой темы
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  applyTheme(savedTheme);
-
-  // При клике — переключаем
-  btn.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
-
-  // Плавная смена иконок
-  [logo, userIcon, bagIcon].forEach(icon => {
-    if (icon) icon.style.transition = 'filter 0.3s ease, opacity 0.3s ease';
-  });
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTheme);
+  } else {
+    // DOM is already ready
+    initTheme();
+  }
 })();
