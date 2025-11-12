@@ -1364,16 +1364,16 @@ body.dark-mode section {
 }
 
 #contact-main {
-  background: #a98501;
+  background: #ffb3d9;
   padding: 15px;
   border-radius: 15px;
   text-decoration: none;
-  color: white;
+  color: #1e1e1e;
 }
 
 #contact-main:hover {
   font-size: 1.3rem;
-  background: var(--coffee-brown-dark);;
+  background: #ffc0e6;
 }
 
 .toast {
@@ -1874,19 +1874,70 @@ body.dark-mode .auth-form input:focus {
 
 body.dark-mode .popup-content {
   background-color: #1e1e1e !important;
-  color: #f5f5f5 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .popup-content h4 {
+  color: #ffffff !important;
 }
 
 body.dark-mode .popup-content .form-control {
   background-color: #333 !important;
-  color: #f5f5f5 !important;
+  color: #ffffff !important;
   border-color: #555 !important;
+}
+
+body.dark-mode .popup-content .form-control::placeholder {
+  color: #cccccc !important;
 }
 
 body.dark-mode .popup-content .form-control:focus {
     background-color: #444 !important;
     border-color: #ffb3d9 !important;
   }
+
+body.dark-mode #openPopupBtn {
+  background-color: #ffb3d9 !important;
+  color: #1e1e1e !important;
+  border: 1px solid #ffb3d9 !important;
+}
+
+body.dark-mode #openPopupBtn:hover {
+  background-color: #ffc0e6 !important;
+  color: #121212 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 179, 217, 0.3);
+}
+
+body.dark-mode .popup-content button[type="submit"] {
+  background-color: #ffb3d9 !important;
+  color: #1e1e1e !important;
+  border: 1px solid #ffb3d9 !important;
+}
+
+body.dark-mode .popup-content button[type="submit"]:hover {
+  background-color: #ffc0e6 !important;
+  color: #121212 !important;
+  box-shadow: 0 2px 6px rgba(255, 179, 217, 0.3);
+}
+
+body.dark-mode .close-popup {
+  color: #ffb3d9 !important;
+}
+
+body.dark-mode .close-popup:hover {
+  color: #ffc0e6 !important;
+}
+
+body.dark-mode #contact-main {
+  background: #ffb3d9 !important;
+  color: #1e1e1e !important;
+}
+
+body.dark-mode #contact-main:hover {
+  background: #ffc0e6 !important;
+  color: #121212 !important;
+}
 
 body.dark-mode .order-summary {
   background-color: #1e1e1e !important;
