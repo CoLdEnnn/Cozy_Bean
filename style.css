@@ -1394,10 +1394,11 @@ body.dark-mode section {
 
 #contact-main {
   background: #ffb3d9;
+  background: #ffb3d9;
   padding: 15px;
   border-radius: 15px;
   text-decoration: none;
-  color: 1e1e1e;
+  color: #1e1e1e;
 }
 
 #contact-main:hover {
@@ -1903,7 +1904,7 @@ body.dark-mode .auth-form input:focus {
 
 body.dark-mode .popup-content {
   background-color: #1e1e1e !important;
-  color: #ffffff  !important;
+  color: #ffffff !important;
 }
 
 body.dark-mode .popup-content h4 {
@@ -1921,9 +1922,9 @@ body.dark-mode .popup-content .form-control::placeholder {
 }
 
 body.dark-mode .popup-content .form-control:focus {
-  background-color: #444 !important;
-  border-color: #ffb3d9 !important;
-}
+    background-color: #444 !important;
+    border-color: #ffb3d9 !important;
+  }
 
 body.dark-mode #openPopupBtn {
   background-color: #ffb3d9 !important;
