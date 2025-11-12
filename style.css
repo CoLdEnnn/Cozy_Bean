@@ -1679,6 +1679,10 @@ body.dark-mode .add-to-cart:hover {
   background-color: #7c6513;
 }
 
+body.dark-mode #press-to:hover {
+  background-color: #8a3b62;
+}
+
 body.dark-mode {
   background-color: #121212;
   color: #f5f5f5;
