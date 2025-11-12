@@ -57,7 +57,29 @@
 
     <main id="main">
       <section>
-        <div id="resetModal" class="modal">...</div>
+        <div id="resetModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Reset Password</h3>
+            <p>
+              Please enter your email address to receive a password reset link.
+            </p>
+
+            <form id="resetForm">
+              <div class="input-reset">
+                <input
+                  type="email"
+                  id="resetEmail"
+                  required
+                  placeholder="Your email"
+                />
+              </div>
+              <button type="submit" id="sendResetLink">Send Link</button>
+            </form>
+
+            <p id="messageArea" style="margin-top: 10px"></p>
+          </div>
+        </div>
         <img
           src="images/coffee-hero.png"
           alt="Cozy coffee setup with cups and beans"
@@ -79,8 +101,8 @@
           </div>
 
           <div class="input-group">
-            <button type="submit">Login</button>
-            <a href="signup.html"><button type="button">Sign Up</button></a>
+            <button type="submit" id="loginbtn">Login</button>
+            <button type="button" id="signupbtnn">Sign Up</button>
           </div>
         </form>
 

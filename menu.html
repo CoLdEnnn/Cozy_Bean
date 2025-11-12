@@ -85,6 +85,43 @@
         <section style="margin-top: 10px">
           <div id="exchange-rate-container">Loading exchange rates...</div>
           <h2>Our Menu</h2>
+          <div class="menu-controls" style="margin-bottom: 20px">
+            <input
+              type="text"
+              id="menuSearch"
+              placeholder="Search for coffee or dessert..."
+              style="
+                padding: 8px;
+                width: 300px;
+                margin-right: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+              "
+            />
+
+            <select
+              id="priceFilter"
+              style="padding: 8px; border: 1px solid #ccc; border-radius: 5px"
+            >
+              <option value="all">All Prices</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
+            </select>
+
+            <button
+              id="resetFilter"
+              style="
+                padding: 8px 15px;
+                margin-left: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #e966a8;
+                color: white;
+              "
+            >
+              Reset
+            </button>
+          </div>
           <h3>Drinks</h3>
           <div class="cards-coffee" id="drinks-section">
             <!-- Напитки -->
@@ -312,8 +349,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+  <script src="cart.js" defer></script>
   <script src="script.js" defer></script>
   <script src="theme.js" defer></script>
-  <script src="cart.js" defer></script>
   <script src="exchangerate.js" defer></script>
 </html>

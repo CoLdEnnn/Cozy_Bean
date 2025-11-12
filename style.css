@@ -484,21 +484,22 @@ main section:target {
 }
 .password-reset {
     padding: 15px;
-    max-width: 400px; /* Добавлено для компактности и предотвращения переполнения */
-    margin: 0 auto; /* Центрирование */
-    text-align: center; /* Центрирование текста */
-    overflow-wrap: break-word; /* Чтобы слова не выходили за границы */
-    word-wrap: break-word; /* Совместимость */
+    max-width: 400px; 
+    margin: 0 auto; 
+    text-align: center; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    align-items: center;
 }
 .password-reset p {
-    font-size: 0.9rem; /* Уменьшен размер текста для компактности */
-    margin: 10px 0; /* Уменьшенные отступы */
-    line-height: 1.4; /* Улучшенная читаемость */
+    font-size: 0.9rem;
+    margin: 10px 0;
+    line-height: 1.4;
 }
 .password-reset button{ 
     background-color: #0066cc;
-    width: 100%; /* Полная ширина для компактности */
-    max-width: 150px; /* Ограничение ширины кнопки */
+    width: 100%; 
+    max-width: 150px;
     height: 35px; /* Увеличена высота для лучшего вида */
     font-size: 1rem; /* Нормальный размер текста */
     margin: 10px auto; /* Центрирование кнопки */
@@ -1445,7 +1446,6 @@ body.dark-mode section {
   pointer-events: all;
 }
 
-/* Sidebar корзины */
 #cart {
   position: fixed;
   top: 0;
@@ -1570,6 +1570,9 @@ body.dark-mode .remove-item:hover {
   background-color: #444;
 }
 
+body.dark-mode .add-to-cart:hover {
+  background-color: #8a3b62;
+}
 #pay-btn {
   background-color: #3b7a57;
   color: white;
@@ -1784,7 +1787,10 @@ body.dark-mode .auth-form {
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1) !important;
   width: 430px !important;
 }
-
+body.dark-mode #loginbtn {
+  color: white;
+  background-color: black;
+}
 body.dark-mode .auth-form label {
   color: #ccc !important;
 }
@@ -1794,7 +1800,8 @@ body.dark-mode .auth-form input {
   color: #f5f5f5 !important;
   border-color: #555 !important;
   padding: 13px !important;
-  width: 350px !important;
+  width: 370px !important;
+  border-radius: 10px;
 }
 
 body.dark-mode .auth-form input:focus {
@@ -2147,7 +2154,15 @@ body.dark-mode #openPopupBtn:hover {
 .order-now {
   border-radius: 7px;
 }
-
+body.dark-mode .add-to-cart {
+  color: white;
+}
+body.dark-mode .order-now {
+  color: white;
+}
+body.dark-mode .order-now:hover {
+  background-color: #8a3b62;
+}
 #exchange-rate-container {
     margin: 10px auto 20px 20px; 
     padding: 15px;
@@ -2208,7 +2223,7 @@ body.dark-mode #popup-title {
 .modal {
   display: none; 
   position: fixed; 
-  z-index: 1000; /
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -2218,17 +2233,19 @@ body.dark-mode #popup-title {
 }
 
 .modal-content {
-  background-color: #333; 
+  background-color: #333 !important; 
   color: #fff;
   margin: 15% auto; 
   padding: 30px;
   border: 1px solid #888;
-  width: 80%; 
+  width: 450px; 
   max-width: 400px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
+.modal-content p {
+  color: black;
+}
 .close-btn {
   color: #aaa;
   float: right;
@@ -2256,14 +2273,15 @@ body.dark-mode #popup-title {
 
 #resetButton {
   border-radius: 5px;
-  background-color: #ffb3d9;
+  background-color: #d4a017;
   text-align: center;
 }
 
-#resetButton button:hover {
-  background-color: #8a3b62;
+#resetButton:hover {
+  background-color: #b98c10;
 }
 
 body.dark-mode #resetButton {
   color: white;
 }
+

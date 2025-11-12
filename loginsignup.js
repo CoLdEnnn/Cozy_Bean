@@ -1,160 +1,148 @@
-// ===========================
-// Form Validation (Login Page)
-// ===========================
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".auth-form");
-  if (!form) return;
-
-  const username = form.querySelector("input[name='username']");
-  const password = form.querySelector("input[name='password']");
-
-  function showError(input, message) {
-    const oldError = input.parentNode.querySelector(".error-msg");
-    if (oldError) oldError.remove();
-
-    const div = document.createElement("div");
-    div.className = "error-msg";
-    div.textContent = message;
-    div.setAttribute('aria-live', 'polite'); // ARIA для объявления ошибок
-    div.style.color = "red";
-    div.style.fontSize = "0.9rem";
-    div.style.marginTop = "4px";
-    input.parentNode.appendChild(div);
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    form.querySelectorAll(".error-msg").forEach(el => el.remove());
-
-    let valid = true;
-
-    if (username.value.trim() === "") {
-      showError(username, "Username is required");
-      valid = false;
-    } else if (username.value.trim().length < 3) {
-      showError(username, "Username must be at least 3 characters");
-      valid = false;
+    // --- Общие функции ---
+    
+    // Получает массив пользователей из LocalStorage
+    function getUsers() {
+        const users = localStorage.getItem('users');
+        return users ? JSON.parse(users) : [];
     }
 
-    if (password.value.trim() === "") {
-      showError(password, "Password is required");
-      valid = false;
-    } else if (password.value.trim().length < 6) {
-      showError(password, "Password must be at least 6 characters");
-      valid = false;
+    // Сохраняет массив пользователей в LocalStorage
+    function saveUsers(users) {
+        localStorage.setItem('users', JSON.stringify(users));
     }
 
-    if (valid) {
-      alert("Login successful!");
-      form.reset();
+    // Функция для отображения ошибок (сделана универсальной)
+    function showError(input, message) {
+        const parentDiv = input.closest('.input-group') || input.parentNode;
+        const oldError = parentDiv.querySelector(".error-msg");
+        if (oldError) oldError.remove();
+
+        const div = document.createElement("div");
+        div.className = "error-msg";
+        div.textContent = message;
+        div.setAttribute('aria-live', 'polite');
+        div.style.color = "red";
+        div.style.fontSize = "0.9rem";
+        div.style.marginTop = "4px";
+        parentDiv.appendChild(div);
     }
-  });
-});
-
-
-// ===========================
-// Signup Validation
-// ===========================
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".signup-form");
-  if (!form) return;
-
-  const username = form.querySelector("input[name='username']");
-  const email = form.querySelector("input[name='email']");
-  const password = form.querySelector("input[name='password']");
-  const confirm = form.querySelector("input[name='confirm']");
-
-  function showError(input, message) {
-    const old = input.parentNode.querySelector(".error-msg");
-    if (old) old.remove();
-    const div = document.createElement("div");
-    div.className = "error-msg";
-    div.textContent = message;
-    div.setAttribute('aria-live', 'polite');
-    div.style.color = "red";
-    div.style.fontSize = "0.9rem";
-    div.style.marginTop = "4px";
-    input.parentNode.appendChild(div);
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    form.querySelectorAll(".error-msg").forEach(el => el.remove());
-    let valid = true;
-
-    if (username.value.trim().length < 3) {
-      showError(username, "Username must be at least 3 characters");
-      valid = false;
+    
+    // --- Навигация ---
+    document.getElementById('signupbtnn')?.addEventListener('click', () => {
+        window.location.href = 'signup.html';
+    });
+    document.getElementById('backToLogin')?.addEventListener('click', () => {
+        window.location.href = 'login.html';
+    });
+    
+    // --- Перенаправление на профиль, если уже вошел ---
+    if (localStorage.getItem('currentUser') && window.location.pathname.includes('login.html')) {
+        window.location.href = 'profile.html'; 
     }
 
-    if (!email.value.includes("@")) {
-      showError(email, "Enter a valid email address");
-      valid = false;
+    const signupForm = document.querySelector(".signup-form");
+    
+    if (signupForm) {
+        const usernameInput = signupForm.querySelector("input[name='username']");
+        const emailInput = signupForm.querySelector("input[name='email']");
+        const passwordInput = signupForm.querySelector("input[name='password']");
+        const confirmInput = signupForm.querySelector("input[name='confirm']");
+
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            signupForm.querySelectorAll(".error-msg").forEach(el => el.remove());
+
+            let valid = true;
+
+            // Валидация
+            if (usernameInput.value.trim().length < 3) {
+                showError(usernameInput, "Username must be at least 3 characters");
+                valid = false;
+            }
+            if (!emailInput.value.includes("@")) {
+                showError(emailInput, "Enter a valid email address");
+                valid = false;
+            }
+            if (passwordInput.value.trim().length < 6) {
+                showError(passwordInput, "Password must be at least 6 characters");
+                valid = false;
+            }
+            if (confirmInput.value !== passwordInput.value) {
+                showError(confirmInput, "Passwords do not match");
+                valid = false;
+            }
+            
+            if (!valid) return; // Прерываем, если валидация не пройдена
+            
+            // Проверка на уникальность и сохранение
+            const username = usernameInput.value.trim();
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+            
+            let users = getUsers();
+
+            if (users.some(user => user.username === username || user.email === email)) {
+                showError(usernameInput, 'User or email already exists!');
+                return;
+            }
+
+            // Успешная регистрация
+            users.push({ username, email, password });
+            saveUsers(users);
+
+            alert('Account created successfully! Please log in.');
+            window.location.href = 'login.html';
+        });
     }
 
-    if (password.value.trim().length < 6) {
-      showError(password, "Password must be at least 6 characters");
-      valid = false;
+    // ==========================================
+    // 2. ЛОГИКА LOG IN (Вход)
+    // ==========================================
+    const loginForm = document.querySelector(".auth-form");
+
+    if (loginForm) {
+        const usernameInput = loginForm.querySelector("input[name='username']");
+        const passwordInput = loginForm.querySelector("input[name='password']");
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            loginForm.querySelectorAll(".error-msg").forEach(el => el.remove());
+
+            let valid = true;
+
+            if (usernameInput.value.trim() === "") {
+                showError(usernameInput, "Username is required");
+                valid = false;
+            } 
+            if (passwordInput.value.trim() === "") {
+                showError(passwordInput, "Password is required");
+                valid = false;
+            } 
+            
+            if (!valid) return; 
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+            
+            const users = getUsers();
+            const user = users.find(u => u.username === username);
+
+            if (user && user.password === password) {
+                localStorage.setItem('currentUser', username);
+                alert(`Welcome back, ${username}!`);
+                window.location.href = 'profile.html';
+            } else {
+                showError(passwordInput, 'Invalid username or password.'); 
+            }
+        });
     }
 
-    if (confirm.value !== password.value) {
-      showError(confirm, "Passwords do not match");
-      valid = false;
-    }
-
-    if (valid) {
-      alert("Account created successfully!");
-      form.reset();
-    }
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('resetModal');
     const resetButton = document.getElementById('resetButton'); 
-    const closeBtn = document.querySelector('#resetModal .close-btn');
-    const resetForm = document.getElementById('resetForm');
-    const emailInput = document.getElementById('resetEmail');
-    const messageArea = document.getElementById('messageArea');
-
+   
     if (resetButton) {
         resetButton.addEventListener('click', () => {
-            modal.style.display = 'block';
-            emailInput.value = ''; 
-            messageArea.textContent = '';
-        });
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-    }
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    if (resetForm) {
-        resetForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const email = emailInput.value.trim();
-            if (email) {
-                console.log(`Sending reset link to: ${email}`);
-                
-                messageArea.style.color = 'green';
-                messageArea.textContent = `If the email is valid, a reset link has been sent to ${email}. Check your inbox!`;
-                
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 3000); 
-            } else {
-                messageArea.style.color = 'red';
-                messageArea.textContent = 'Please enter a valid email address.';
-            }
+            if (modal) modal.style.display = 'block';
         });
     }
 });

@@ -70,7 +70,12 @@
           bonuses!
         </p>
 
-        <form action="#" method="post" class="auth-form">
+        <form
+          action="#"
+          method="post"
+          class="auth-form signup-form"
+          id="signupForm"
+        >
           <div class="input-group">
             <input type="text" name="username" required aria-required="true" />
             <label for="username">Username</label>
@@ -103,9 +108,7 @@
 
           <div class="signup-btn">
             <button type="submit" class="signupbtn">Sign Up</button>
-            <a href="login.html"
-              ><button type="button">Back to Login</button></a
-            >
+            <button type="button" id="backToLogin">Back to Login</button>
           </div>
         </form>
       </section>
