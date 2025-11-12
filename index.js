@@ -11,39 +11,13 @@ function updateDateTime() {
     minute: '2-digit', 
     second: '2-digit'
   };
-  document.getElementById('date-time').textContent = now.toLocaleString('en-US', options);
+  document.getElementById('date-time').textContent = now.toLocaleString('ru-RU', options);
 }
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
-// ----------- Рейтинг ----------- //
-const ratings = document.querySelectorAll('.rating');
 
-ratings.forEach(rating => {
-  const stars = rating.querySelectorAll('.star');
-  const itemName = rating.dataset.item;
-  const savedRating = localStorage.getItem(`rating_${itemName}`) || 0;
-
-  if (savedRating > 0) highlightStars(stars, savedRating);
-  rating.setAttribute('aria-valuenow', savedRating); // Обновляем ARIA
-
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const value = parseInt(star.dataset.value);
-      highlightStars(stars, value);
-      localStorage.setItem(`rating_${itemName}`, value);
-      rating.setAttribute('aria-valuenow', value); // Обновляем ARIA
-    });
-  });
-});
-
-function highlightStars(stars, value) {
-  stars.forEach((s, i) => {
-    if (i < value) s.classList.add('selected');
-    else s.classList.remove('selected');
-  });
-}
 
 $(document).ready(function() {
   console.log("Autocomplete is ready!");
@@ -87,4 +61,34 @@ $(document).ready(function() {
   $input.on("blur", function() {
     setTimeout(() => $list.removeClass("show"), 150);
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ----------- Рейтинг ----------- //
+    const ratings = document.querySelectorAll('.rating');
+
+    ratings.forEach(rating => {
+        const stars = rating.querySelectorAll('.star');
+        const itemName = rating.dataset.item;
+        const savedRating = localStorage.getItem(`rating_${itemName}`) || 0;
+
+        if (savedRating > 0) highlightStars(stars, savedRating);
+        rating.setAttribute('aria-valuenow', savedRating); 
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const value = parseInt(star.dataset.value);
+                highlightStars(stars, value);
+                localStorage.setItem(`rating_${itemName}`, value);
+                rating.setAttribute('aria-valuenow', value); 
+            });
+        });
+    });
+
+    function highlightStars(stars, value) {
+        stars.forEach((s, i) => {
+            if (i < value) s.classList.add('selected');
+            else s.classList.remove('selected');
+        });
+    }
 });

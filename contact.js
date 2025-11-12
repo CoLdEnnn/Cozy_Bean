@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===========================
 // Loading Spinner on Submit
 // ===========================
-
 const form = document.querySelector('#popupOverlay form');
 if (form) {
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -34,7 +33,6 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Создаем сам спиннер
     const spinner = document.createElement('span');
     spinner.setAttribute('aria-live', 'assertive'); // ARIA для объявления
     spinner.textContent = 'Loading...'; // Для экранных читалок
@@ -48,7 +46,6 @@ if (form) {
     spinner.style.verticalAlign = 'middle';
     spinner.style.animation = 'spin 0.7s linear infinite';
 
-    // Добавляем анимацию вращения через @keyframes
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes spin {
@@ -58,7 +55,6 @@ if (form) {
     `;
     document.head.appendChild(style);
 
-    // Изменяем кнопку
     submitBtn.disabled = true;
     submitBtn.style.backgroundColor = '#b38b67';
     submitBtn.style.color = '#fff';
@@ -69,7 +65,6 @@ if (form) {
     submitBtn.appendChild(spinner);
     submitBtn.appendChild(document.createTextNode(' Sending...'));
 
-    // Имитация отправки данных
     setTimeout(() => {
       submitBtn.disabled = false;
       submitBtn.style.backgroundColor = '#7b4b2a';
@@ -77,7 +72,6 @@ if (form) {
       submitBtn.style.cursor = 'pointer';
       submitBtn.innerText = 'Send Message';
 
-      // close popup и сбросить форму
       document.getElementById('popupOverlay').style.display = 'none';
       alert('✅ Message sent successfully!');
       form.reset();

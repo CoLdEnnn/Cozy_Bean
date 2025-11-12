@@ -37,3 +37,4 @@ function showToast(message) {
 document.getElementById('clickableImage').onclick = function() {
   window.location.href = 'login.html';
 }
+

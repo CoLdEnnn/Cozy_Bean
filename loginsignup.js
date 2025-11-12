@@ -108,3 +108,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('resetModal');
+    const resetButton = document.getElementById('resetButton'); 
+    const closeBtn = document.querySelector('#resetModal .close-btn');
+    const resetForm = document.getElementById('resetForm');
+    const emailInput = document.getElementById('resetEmail');
+    const messageArea = document.getElementById('messageArea');
+
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            modal.style.display = 'block';
+            emailInput.value = ''; 
+            messageArea.textContent = '';
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    if (resetForm) {
+        resetForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            if (email) {
+                console.log(`Sending reset link to: ${email}`);
+                
+                messageArea.style.color = 'green';
+                messageArea.textContent = `If the email is valid, a reset link has been sent to ${email}. Check your inbox!`;
+                
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 3000); 
+            } else {
+                messageArea.style.color = 'red';
+                messageArea.textContent = 'Please enter a valid email address.';
+            }
+        });
+    }
+});
