@@ -145,3 +145,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadAndApplyState();
 });
+// === Cozy Bean Stats Counter Animation ===
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll("#cozybean-stats .stat-number");
+  const speed = 3500; // smaller = faster
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const suffix = counter.getAttribute("data-suffix") || "";
+      const current = +counter.innerText;
+
+      const increment = Math.ceil(target / speed);
+
+      if (current < target) {
+        counter.innerText = Math.min(current + increment, target);
+        setTimeout(animateCounters, 30);
+      } else {
+        counter.innerText = target + suffix;
+      }
+    });
+  };
+
+  // Запускаем анимацию, когда секция видна на экране
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    });
+  });
+
+  observer.observe(document.querySelector("#cozybean-stats"));
+});

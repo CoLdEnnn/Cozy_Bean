@@ -1719,6 +1719,60 @@ body.dark-mode a {
 body.dark-mode button {
   background-color: #ff9ec7;
   color: #000; 
+  
+}
+
+/* === Cozy Bean Stats Section === */
+#cozybean-stats {
+  background: linear-gradient(135deg, #f8f5f2, #fafafa);
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+#cozybean-stats .stats-card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#cozybean-stats .stat-item {
+  flex: 1 1 200px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cozybean-stats .stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+#cozybean-stats .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6b4e16; /* Coffee tone */
+}
+
+#cozybean-stats .stat-label {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Optional small screen tweaks */
+@media (max-width: 768px) {
+  #cozybean-stats .stat-number {
+    font-size: 2rem;
+  }
 }
 
 .theme-btn {
