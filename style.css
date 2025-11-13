@@ -1781,6 +1781,9 @@ body.dark-mode .carousel-control-next-icon {
   #cozybean-stats .stat-number {
     font-size: 2rem;
   }
+  #resetFilter {
+    margin-top: 15px;
+  }
 }
 
 .theme-btn {
