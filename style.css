@@ -1016,7 +1016,9 @@ h2, h4 {
     background-color: #1e1e1e !important;
     color: #f5f5f5 !important;
   }
-  
+  body.dark-mode .carousel-control-next:hover {
+    background-color: black!important;
+  }
   body.dark-mode #header .nav-links a,
   body.dark-mode #header .nav-bar a,
   body.dark-mode #header nav a {
@@ -1721,14 +1723,20 @@ body.dark-mode button {
   color: #000; 
   
 }
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+  background-color: transparent !important;
+}
 
-/* === Cozy Bean Stats Section === */
+/* Или если хотите изменить цвет иконок стрелок: */
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+  filter: invert(1); /* белые стрелки */
+}
 #cozybean-stats {
-  background: linear-gradient(135deg, #f8f5f2, #fafafa);
+  background: #ffffff;
   padding: 60px 20px;
   text-align: center;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
 }
 
 #cozybean-stats .stats-card {
@@ -1745,14 +1753,14 @@ body.dark-mode button {
   flex: 1 1 200px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #cozybean-stats .stat-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
 #cozybean-stats .stat-number {
@@ -1938,7 +1946,20 @@ body.dark-mode #header nav a.active {
 body.dark-mode main {
   background-color: #121212 !important;
 }
-
+body.dark-mode #cozybean-stats {
+  background-color: #121212;
+  color: white;
+}
+body.dark-mode .stats-card {
+  background-color: #121212;
+}
+body.dark-mode #cozybean-stats .stat-item {
+  background-color: #484646;
+  color: white;
+}
+body.dark-mode #cozybean-stats .stat-number, body.dark-mode #cozybean-stats .dstat-label {
+  color: #ffb3d9;
+}
 body.dark-mode aside,
 body.dark-mode #section-sidebar {
   background-color: #1f1f1f !important;
